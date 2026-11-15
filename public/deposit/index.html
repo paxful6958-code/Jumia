@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrashGame -- Secure Deposits Gateway</title>
+
+    <style>
+         :root {
+            --bg-base: #0b0e14;
+            --bg-surface: #131924;
+            --bg-card: #1a2232;
+            --bg-input: #0e131d;
+            --accent-cyan: #00f2fe;
+            --accent-blue: #4facfe;
+            --accent-green: #10b981;
+            --accent-glow: rgba(0, 242, 254, 0.25);
+            --text-main: #f8fafc;
+            --text-muted: #8492a6;
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --border-active: rgba(0, 242, 254, 0.5);
+            --error-red: #ef4444;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            touch-action: manipulation;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            color: var(--text-main);
+            background: var(--bg-base);
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        button,
+        input {
+            font: inherit;
+        }
+        
+        header {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            background: rgba(19, 25, 36, 0.85);
+            border-bottom: 1px solid var(--border-glass);
+            backdrop-filter: blur(24px);
+        }
+        
+        .back-link {
+            position: absolute;
+            left: 20px;
+            color: var(--accent-cyan);
+            font-size: 13px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            text-decoration: none;
+        }
+        
+        .main-wrapper {
+            position: relative;
+            flex: 1;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+        
+        .viewport {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .slider-track {
+            display: flex;
+            width: 200%;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .step-panel {
+            width: 50%;
+            flex-shrink: 0;
+            padding: 0 8px;
+        }
+        
+        h2 {
+            margin-bottom: 6px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: 800;
+        }
+        
+        p.subtitle {
+            margin-bottom: 24px;
+            color: var(--text-muted);
+            text-align: center;
+            font-size: 13px;
+        }
+        
+        .methods-grid,
+        .amounts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .amounts-grid {
+            margin-bottom: 24px;
+        }
+        
+        .method-card,
+        .amount-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 8px;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        
+        .amount-card {
+            min-height: 100px;
+            padding: 18px 10px;
+            gap: 6px;
+        }
+        
+        .method-card:hover,
+        .amount-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+        
+        .method-card:focus-visible,
+        .amount-card:focus-visible,
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid var(--accent-cyan);
+            outline-offset: 3px;
+        }
+        
+        .method-icon {
+            display: flex;
+            min-height: 30px;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+        }
+        
+        .method-icon img {
+            display: block;
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+        
+        .method-name,
+        .amount-title {
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        
+        .amount-title {
+            font-size: 16px;
+        }
+        
+        .method-sub,
+        .amount-sub {
+            color: var(--text-muted);
+            text-align: center;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        
+        .amount-sub {
+            color: var(--accent-green);
+        }
+        
+        .support-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: rgba(19, 25, 36, 0.7);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            backdrop-filter: blur(8px);
+        }
+        
+        .support-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .telegram-icon-wrapper {
+            display: flex;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 136, 204, 0.15);
+            border: 1px solid rgba(0, 136, 204, 0.4);
+            border-radius: 50%;
+            font-size: 15px;
+        }
+        
+        .support-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .support-title {
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .support-sub {
+            color: var(--text-muted);
+            font-size: 10px;
+            font-weight: 500;
+        }
+        
+        .support-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            color: #fff;
+            background: #0088cc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 136, 204, 0.3);
+            font-size: 11px;
+            font-weight: 800;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: 0.2s;
+        }
+        
+        .support-btn:hover {
+            background: #0099e6;
+            transform: translateY(-1px);
+        }
+        
+        .loading-overlay {
+            position: absolute;
+            z-index: 50;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            background: rgba(11, 14, 20, 0.94);
+            backdrop-filter: blur(12px);
+        }
+        
+        .premium-spinner {
+            position: relative;
+            display: flex;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .spinner-ring {
+            position: absolute;
+            inset: 0;
+            border: 3px solid transparent;
+            border-top-color: var(--accent-cyan);
+            border-right-color: var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+        
+        .spinner-core {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--accent-cyan);
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .loading-text {
+            color: var(--text-main);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: pulseText 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulseText {
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .btn-back-step {
+            padding: 8px 14px;
+            color: var(--accent-cyan);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        
+        .payment-box {
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+            background: var(--bg-input);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+        }
+        
+        .qr-code {
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin: 14px auto;
+            padding: 8px;
+            background: #fff;
+            border-radius: 12px;
+        }
+        
+        .address-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 10px;
+            padding: 10px 14px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            font-size: 12px;
+        }
+        
+        .address-text {
+            color: #a1a1aa;
+            font-family: monospace;
+            font-size: 11px;
+            word-break: break-all;
+        }
+        
+        .copy-btn {
+            flex-shrink: 0;
+            padding: 8px 14px;
+            color: #050811;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border: 0;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        
+        .input-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+        
+        .input-group label,
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 14px 16px;
+            color: var(--text-main);
+            background: var(--bg-input);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            outline: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .input-field:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+        
+        .input-note,
+        .form-hint {
+            display: block;
+            margin-top: 6px;
+            color: var(--text-muted);
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        .input-note strong {
+            color: var(--accent-cyan);
+        }
+        
+        .validation-error {
+            display: none;
+            margin-top: 6px;
+            color: var(--error-red);
+            font-size: 11px;
+            font-weight: 700;
+        }
+        
+        .file-upload-wrapper {
+            position: relative;
+            padding: 16px;
+            text-align: center;
+            background: var(--bg-input);
+            border: 2px dashed var(--border-glass);
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        
+        .file-upload-wrapper:hover {
+            border-color: var(--accent-cyan);
+        }
+        
+        .file-upload-input {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .btn-submit,
+        #payBtn {
+            width: 100%;
+            margin-top: 8px;
+            padding: 16px;
+            color: #050811;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border: 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px var(--accent-glow);
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        
+        #payBtn:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            z-index: 1000;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            background: rgba(7, 10, 15, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        
+        .modal-overlay.open {
+            display: flex;
+            animation: fadeIn 0.2s ease;
+        }
+        
+        .modal-content,
+        .modal-card {
+            width: 100%;
+            max-width: 440px;
+            max-height: 90vh;
+            padding: 24px;
+            overflow-y: auto;
+            text-align: center;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+        }
+        
+        .modal-card {
+            max-width: 400px;
+            text-align: left;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+        
+        .modal-title {
+            font-size: 18px;
+            font-weight: 800;
+        }
+        
+        .modal-close {
+            display: flex;
+            width: 32px;
+            height: 32px;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .network-btn {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 14px;
+            color: var(--text-main);
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        
+        .network-btn:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 242, 254, 0.1);
+        }
+        
+        .phone-input-wrapper {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--bg-input);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+        }
+        
+        .phone-prefix {
+            padding: 14px 12px;
+            color: var(--accent-cyan);
+            border-right: 1px solid var(--border-glass);
+            font-size: 14px;
+            font-weight: 800;
+        }
+        
+        #phoneInput {
+            flex: 1;
+            min-width: 0;
+            padding: 14px 12px;
+            color: var(--text-main);
+            background: transparent;
+            border: 0;
+            outline: none;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        
+        #phoneInput::placeholder {
+            color: #4a5568;
+        }
+        
+        .selected-amount-display {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 16px 0;
+            padding: 12px 14px;
+            background: var(--bg-input);
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        
+        .selected-amount-display .label {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        
+        .selected-amount-display .value {
+            color: var(--accent-cyan);
+            font-size: 15px;
+            font-weight: 800;
+        }
+        
+        .status-box {
+            display: none;
+            margin-top: 14px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        
+        .status-box.show {
+            display: block;
+        }
+        
+        .status-box.loading {
+            color: var(--accent-cyan);
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid var(--border-active);
+        }
+        
+        .status-box.success {
+            color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.5);
+        }
+        
+        .status-box.error {
+            color: var(--error-red);
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+        }
+        
+        .method-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 10px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+        }
+        
+        .method-row-info {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        
+        .method-logo-wrapper {
+            display: flex;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-base);
+            border: 1.5px solid var(--accent-cyan);
+            border-radius: 50%;
+            font-size: 16px;
+        }
+        
+        .buy-now-btn {
+            flex-shrink: 0;
+            padding: 7px 12px;
+            color: #050811;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border-radius: 6px;
+            box-shadow: 0 0 8px var(--accent-glow);
+            font-size: 11px;
+            font-weight: 800;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 380px) {
+            .methods-grid,
+            .amounts-grid {
+                gap: 8px;
+            }
+            .method-card {
+                padding: 13px 5px;
+            }
+            .support-banner {
+                padding: 10px;
+            }
+            .modal-content,
+            .modal-card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/dashboard/index.html" class="back-link">&larr; Back</a>
+        <a href="/dashboard/index.html" class="nav-logo">🎰 CrashGame</a>
+    </header>
+
+    <main class="main-wrapper">
+        <div id="loadingOverlay" class="loading-overlay">
+            <div class="premium-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-core"></div>
+            </div>
+            <div class="loading-text">Securing Session</div>
+        </div>
+
+        <div class="viewport">
+            <div class="slider-track" id="sliderTrack">
+                <!-- STEP 1: Choose payment method -->
+                <section class="step-panel">
+                    <h2>Deposit Gateway</h2>
+                    <p class="subtitle">Choose your payment provider to proceed.</p>
+
+                    <div class="methods-grid">
+                        <button type="button" class="method-card" onclick="openEcocashModal()">
+                            <span class="method-icon">
+                                <img src="https://techafricanews.com/wp-content/uploads/2026/04/eco-cash.png"
+                                     alt="EcoCash logo">
+                            </span>
+                            <span class="method-name">EcoCash</span>
+                            <span class="method-sub">Mobile Money</span>
+                        </button>
+
+                        <button type="button" class="method-card" onclick="selectMethod('ott')">
+                            <span class="method-icon">🎟️</span>
+                            <span class="method-name">OTT Voucher</span>
+                            <span class="method-sub">Prepaid</span>
+                        </button>
+
+                        <button type="button" class="method-card" onclick="selectMethod('bitcoin')">
+                            <span class="method-icon">₿</span>
+                            <span class="method-name">Bitcoin</span>
+                            <span class="method-sub">BTC Chain</span>
+                        </button>
+
+                        <button type="button" class="method-card" onclick="openUsdtModal()">
+                            <span class="method-icon">₮</span>
+                            <span class="method-name">USDT</span>
+                            <span class="method-sub">TRC20 / BEP20</span>
+                        </button>
+
+                        <button type="button" class="method-card" onclick="openMpesaModal()">
+                            <span class="method-icon">
+                                <img src="https://akaunting.com/public/assets/media/4-akaunting-inc/m-pesa/m-pesa-logo_1.png"
+                                     alt="M-Pesa logo">
+                            </span>
+                            <span class="method-name">M-Pesa</span>
+                            <span class="method-sub">Deposit via M-Pesa</span>
+                        </button>
+
+                        <button type="button" class="method-card" onclick="openOthersModal()">
+                            <span class="method-icon">▦</span>
+                            <span class="method-name">Others</span>
+                            <span class="method-sub">See More</span>
+                        </button>
+                    </div>
+
+                    <div class="support-banner">
+                        <div class="support-info">
+                            <div class="telegram-icon-wrapper">✈</div>
+                            <div class="support-text-container">
+                                <span class="support-title">Can't find your method?</span>
+                                <span class="support-sub">👨‍💻 Contact Customer Support</span>
+                            </div>
+                        </div>
+                        <a href="https://t.me/AviatorX800" target="_blank" rel="noopener noreferrer" class="support-btn">
+                            Contact
+                        </a>
+                    </div>
+                </section>
+
+                <!-- STEP 2: Existing wallet/voucher deposit details -->
+                <section class="step-panel">
+                    <div class="step-header">
+                        <button type="button" class="btn-back-step" onclick="goToStep(1)">
+                            &larr; Change Method
+                        </button>
+                        <span id="stepTitle" style="font-weight:800;font-size:13px;color:var(--accent-cyan);">
+                            DETAILS
+                        </span>
+                    </div>
+
+                    <form id="depositForm">
+                        <div class="payment-box" id="paymentBox">
+                            <p id="instructionText" style="font-size:12px;font-weight:700;color:#fff;"></p>
+                            <img id="qrImage" class="qr-code" src="#" alt="QR Code" style="display:none;">
+                            <div id="addressWrapper" class="address-container" style="display:none;">
+                                <span id="addressText" class="address-text"></span>
+                                <button type="button" class="copy-btn" id="copyAddressButton" onclick="copyAddress()">
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="input-group" id="amountGroup">
+                            <label id="minAmountLabel" for="depositAmount">Deposit Amount</label>
+                            <input type="number" id="depositAmount" class="input-field" placeholder="0.00" step="any">
+                            <span class="validation-error" id="amountError"></span>
+                        </div>
+
+                        <div class="input-group" id="voucherGroup" style="display:none;">
+                            <label for="voucherCode">Voucher PIN Code(s)</label>
+                            <input type="text" id="voucherCode" class="input-field" placeholder="Enter PIN code(s)">
+
+                            <label for="voucherAmount" style="margin-top:12px;">Total Voucher Value (ZAR)</label>
+                            <input type="number" id="voucherAmount" class="input-field" placeholder="Minimum R200 total value" step="any">
+                            <span class="validation-error" id="voucherAmountError"></span>
+
+                            <span class="input-note">
+                                <strong>Note:</strong> Minimum total deposit for vouchers is
+                                <strong>R200 ZAR</strong>. Combine multiple voucher values and separate PIN
+                                codes with commas (e.g., 123456789, 987654321).
+                            </span>
+                        </div>
+
+                        <div class="input-group" id="proofGroup">
+                            <label>Payment Proof</label>
+                            <div class="file-upload-wrapper">
+                                <span id="fileNameDisplay" style="font-size:12px;color:var(--text-muted);font-weight:600;">
+                                    Choose image or screenshot...
+                                </span>
+                                <input type="file" id="proofFile" class="file-upload-input" accept="image/*,.pdf" onchange="handleFileSelect(this)">
+                            </div>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn-submit">CONFIRM DEPOSIT</button>
+                    </form>
+
+                    <div class="support-banner">
+                        <div class="support-info">
+                            <div class="telegram-icon-wrapper">✈</div>
+                            <div class="support-text-container">
+                                <span class="support-title">Need help with your payment?</span>
+                                <span class="support-sub">Contact Customer Support instantly</span>
+                            </div>
+                        </div>
+                        <a href="https://t.me/AviatorX800" target="_blank" rel="noopener noreferrer" class="support-btn">
+                            Support
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- ECOCASH AMOUNT MODAL -->
+    <div class="modal-overlay" id="ecocashModalOverlay">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="ecocashModalTitle">
+            <div class="modal-header">
+                <h3 class="modal-title" id="ecocashModalTitle">EcoCash Deposit</h3>
+                <button type="button" class="modal-close" id="ecocashModalClose" aria-label="Close">
+                    &times;
+                </button>
+            </div>
+
+            <p class="subtitle" style="margin-bottom:16px;">
+                Select the amount you would like to deposit.
+            </p>
+
+            <div class="amounts-grid" id="ecocashAmountsGrid"></div>
+        </div>
+    </div>
+
+    <!-- USDT NETWORK MODAL -->
+    <div id="usdtNetworkModal" class="modal-overlay">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="usdtModalTitle">
+            <h3 id="usdtModalTitle" style="margin-bottom:16px;font-size:18px;">Select USDT Network</h3>
+            <button type="button" class="network-btn" onclick="selectUsdtNetwork('usdt_trc20')">
+                TRC20 (Tron)
+            </button>
+            <button type="button" class="network-btn" onclick="selectUsdtNetwork('usdt_bep20')">
+                BEP20 (Binance Smart Chain)
+            </button>
+            <button type="button" class="btn-back-step" style="width:100%;margin-top:8px;" onclick="closeUsdtModal()">
+                Cancel
+            </button>
+
+            <div class="support-banner" style="margin-top:14px;text-align:left;">
+                <div class="support-info">
+                    <div class="telegram-icon-wrapper">✈</div>
+                    <div class="support-text-container">
+                        <span class="support-title">Need custom USDT networks?</span>
+                    </div>
+                </div>
+                <a href="https://t.me/AviatorX800" target="_blank" rel="noopener noreferrer" class="support-btn">
+                    Support
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- M-PESA DEPOSIT MODAL -->
+    <div class="modal-overlay" id="mpesaModalOverlay">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mpesaTitle">
+            <div class="modal-header">
+                <span class="modal-title" id="mpesaTitle">M-Pesa Deposit</span>
+                <button type="button" class="modal-close" id="mpesaModalClose" aria-label="Close">
+                    &times;
+                </button>
+            </div>
+
+            <h2 style="font-size:20px;margin-bottom:4px;">Select Amount</h2>
+            <p class="subtitle" style="margin-bottom:16px;">Tap an amount to deposit instantly via M-Pesa.</p>
+
+            <div class="amounts-grid" id="amountsGrid"></div>
+
+            <label class="form-label" for="phoneInput">M-Pesa Phone Number</label>
+            <div class="phone-input-wrapper">
+                <span class="phone-prefix">+254</span>
+                <input type="tel" id="phoneInput" inputmode="numeric" maxlength="10" placeholder="712345678" autocomplete="tel">
+            </div>
+            <p class="form-hint">Enter your Safaricom number, e.g. 712345678 or 0112345678.</p>
+
+            <div class="selected-amount-display">
+                <span class="label">Selected Amount</span>
+                <span class="value" id="selectedAmount">--</span>
+            </div>
+
+            <button type="button" id="payBtn" disabled>Deposit Now</button>
+            <div class="status-box" id="statusBox" aria-live="polite"></div>
+
+            <div class="support-banner" style="margin-top:14px;">
+                <div class="support-info">
+                    <div class="telegram-icon-wrapper">✈</div>
+                    <div class="support-text-container">
+                        <span class="support-title">Need help with M-Pesa?</span>
+                        <span class="support-sub">Contact Customer Support instantly</span>
+                    </div>
+                </div>
+                <a href="https://t.me/AviatorX800" target="_blank" rel="noopener noreferrer" class="support-btn">
+                    Support
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- OTHERS / SEE MORE PAYMENT OPTIONS MODAL -->
+    <div id="othersModal" class="modal-overlay">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="othersTitle">
+            <h3 id="othersTitle" style="margin-bottom:8px;font-size:18px;">More Payment Methods</h3>
+            <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;">
+                Select your preferred payment method to deposit directly.
+            </p>
+
+            <div id="otherMethodsList"></div>
+
+            <button type="button" class="btn-back-step" style="width:100%;margin-top:16px;" onclick="closeOthersModal()">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const TELEGRAM_USERNAME = "AviatorX800";
+
+        const walletAddresses = {
+            usdt_trc20: "TY4udoAtSv7Uc1AXvHmcaJmCVvswh4qP21",
+            bitcoin: "1JL919UestFucGDzapv7xkE9xDvJrHzuwS",
+            gram: "UQB91vR2KPJE-cPRIDluucP7Yz40bnEdbYsrflDabCeeeo8g"
+        };
+
+        function selectMethod(method) {
+            document.getElementById("sliderTrack").style.transform = "translateX(-50%)";
+
+            const addressText = document.getElementById("addressText");
+            const addressWrapper = document.getElementById("addressWrapper");
+            const instructionText = document.getElementById("instructionText");
+
+            if (walletAddresses[method]) {
+                addressText.textContent = walletAddresses[method];
+                addressWrapper.style.display = "flex";
+                instructionText.textContent =
+                    `Please send the exact amount to the ${method.toUpperCase()} address below:`;
+            } else {
+                addressWrapper.style.display = "none";
+                instructionText.textContent = `Please follow instructions for ${method.toUpperCase()}`;
+            }
+        }
+
+        function selectUsdtNetwork(network) {
+            closeUsdtModal();
+            document.getElementById("sliderTrack").style.transform = "translateX(-50%)";
+
+            const address = walletAddresses[network] || walletAddresses.usdt_trc20;
+            document.getElementById("addressText").textContent = address;
+            document.getElementById("addressWrapper").style.display = "flex";
+
+            const networkName = network === "usdt_bep20" ? "BEP20" : "TRC20";
+            document.getElementById("instructionText").textContent =
+                `Please send USDT (${networkName}) to the address below:`;
+        }
+
+        function goToStep(step) {
+            if (step === 1) {
+                document.getElementById("sliderTrack").style.transform = "translateX(0%)";
+            }
+        }
+
+        function openUsdtModal() {
+            document.getElementById("usdtNetworkModal").classList.add("open");
+        }
+
+        function closeUsdtModal() {
+            document.getElementById("usdtNetworkModal").classList.remove("open");
+        }
+
+        function openOthersModal() {
+            document.getElementById("othersModal").classList.add("open");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeOthersModal() {
+            document.getElementById("othersModal").classList.remove("open");
+            document.body.style.overflow = "";
+        }
+
+        async function copyAddress() {
+            const text = document.getElementById("addressText").textContent;
+            const button = document.getElementById("copyAddressButton");
+
+            try {
+                await navigator.clipboard.writeText(text);
+                button.textContent = "Copied!";
+                setTimeout(() => button.textContent = "Copy", 1500);
+            } catch (error) {
+                button.textContent = "Copy failed";
+                setTimeout(() => button.textContent = "Copy", 1500);
+            }
+        }
+
+        function handleFileSelect(input) {
+            if (input.files && input.files[0]) {
+                document.getElementById("fileNameDisplay").textContent = input.files[0].name;
+            }
+        }
+
+        /* EcoCash: select an amount, then open the Telegram chat with a prefilled message. */
+        const ECOCASH_AMOUNTS = [10, 30, 50, 100, 150, 200, 500, 1000];
+        const ecocashModalOverlay = document.getElementById("ecocashModalOverlay");
+        const ecocashAmountsGrid = document.getElementById("ecocashAmountsGrid");
+
+        function openEcocashModal() {
+            ecocashModalOverlay.classList.add("open");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeEcocashModal() {
+            ecocashModalOverlay.classList.remove("open");
+            document.body.style.overflow = "";
+        }
+
+        function redirectToEcocashTelegram(amount) {
+            const message =
+                `Greetings 👋 I would like to deposit $${amount} on my CrashGame 🎰 using ECOCASH 💳`;
+
+            const telegramUrl =
+                `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
+
+            window.location.href = telegramUrl;
+        }
+
+        ECOCASH_AMOUNTS.forEach(amount => {
+            const card = document.createElement("button");
+            card.type = "button";
+            card.className = "amount-card";
+            card.innerHTML = `
+                <span class="amount-title">$${amount}</span>
+                <span class="amount-sub">DEPOSIT NOW</span>
+            `;
+            card.addEventListener("click", () => redirectToEcocashTelegram(amount));
+            ecocashAmountsGrid.appendChild(card);
+        });
+
+        document.getElementById("ecocashModalClose").addEventListener("click", closeEcocashModal);
+
+        ecocashModalOverlay.addEventListener("click", event => {
+            if (event.target === ecocashModalOverlay) {
+                closeEcocashModal();
+            }
+        });
+
+        /* Other payment options. */
+        const otherMethods = [{
+            name: "Opay",
+            icon: "🟢"
+        }, {
+            name: "Wave",
+            icon: "🌊"
+        }, {
+            name: "Airtm",
+            icon: "💸"
+        }, {
+            name: "Bkash",
+            icon: "📱"
+        }, {
+            name: "Gcash",
+            icon: "📲"
+        }, {
+            name: "Mpesa",
+            icon: "📞"
+        }, {
+            name: "Nagad",
+            icon: "📱"
+        }, {
+            name: "Paytm",
+            icon: "💳"
+        }, {
+            name: "Skrill",
+            icon: "💰"
+        }, {
+            name: "PhonePe",
+            icon: "📲"
+        }, {
+            name: "JazzCash",
+            icon: "📱"
+        }, {
+            name: "Redotpay",
+            icon: "💳"
+        }, {
+            name: "Telebirr",
+            icon: "📞"
+        }, {
+            name: "Easypaisa",
+            icon: "📱"
+        }, {
+            name: "Airtel Money",
+            icon: "📞"
+        }, {
+            name: "South Africa Bank",
+            icon: "🏦"
+        }, {
+            name: "Orange Money",
+            icon: "📱"
+        }, {
+            name: "Turkey IBAN",
+            icon: "🏦"
+        }, {
+            name: "MTN Mobile Money",
+            icon: "📱"
+        }];
+
+        const otherMethodsList = document.getElementById("otherMethodsList");
+
+        otherMethods.forEach(method => {
+            const message =
+                `Greetings 👋 I would like to deposit on my CrashGame 🎰 using ${method.name} 💳`;
+            const telegramUrl =
+                `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
+
+            const row = document.createElement("div");
+            row.className = "method-row";
+            row.innerHTML = `
+                <div class="method-row-info">
+                    <span class="method-logo-wrapper" aria-hidden="true">${method.icon}</span>
+                    <span>${method.name}</span>
+                </div>
+                <a href="${telegramUrl}" target="_blank" rel="noopener noreferrer" class="buy-now-btn">
+                    DEPOSIT NOW
+                </a>
+            `;
+            otherMethodsList.appendChild(row);
+        });
+
+        /* M-Pesa section. */
+        const MPESA_AMOUNTS = [100, 200, 500, 750, 1000, 1250, 1500, 2000, 2250, 2500, 3000];
+
+        const mpesaModalOverlay = document.getElementById("mpesaModalOverlay");
+        const amountsGrid = document.getElementById("amountsGrid");
+        const phoneInput = document.getElementById("phoneInput");
+        const selectedAmountEl = document.getElementById("selectedAmount");
+        const payBtn = document.getElementById("payBtn");
+        const statusBox = document.getElementById("statusBox");
+
+        let selectedMpesaAmount = null;
+
+        function openMpesaModal() {
+            mpesaModalOverlay.classList.add("open");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeMpesaModal() {
+            mpesaModalOverlay.classList.remove("open");
+            document.body.style.overflow = "";
+            statusBox.className = "status-box";
+            phoneInput.value = "";
+            payBtn.disabled = true;
+            selectedMpesaAmount = null;
+            selectedAmountEl.textContent = "--";
+        }
+
+        document.getElementById("mpesaModalClose").addEventListener("click", closeMpesaModal);
+
+        mpesaModalOverlay.addEventListener("click", event => {
+            if (event.target === mpesaModalOverlay) {
+                closeMpesaModal();
+            }
+        });
+
+        MPESA_AMOUNTS.forEach(amount => {
+            const card = document.createElement("button");
+            card.type = "button";
+            card.className = "amount-card";
+            card.innerHTML = `
+                <span class="amount-title">KES ${amount.toLocaleString()}</span>
+                <span class="amount-sub">DEPOSIT NOW</span>
+            `;
+
+            card.addEventListener("click", () => {
+                selectedMpesaAmount = amount;
+                selectedAmountEl.textContent = "KES " + amount.toLocaleString();
+                statusBox.className = "status-box";
+                updatePayButton();
+                setTimeout(() => phoneInput.focus(), 100);
+            });
+
+            amountsGrid.appendChild(card);
+        });
+
+        function normalizePhone(raw) {
+            let phone = raw.replace(/\D/g, "");
+
+            if (phone.startsWith("0")) {
+                phone = "254" + phone.slice(1);
+            } else if (phone.startsWith("7") || phone.startsWith("1")) {
+                phone = "254" + phone;
+            }
+
+            return phone;
+        }
+
+        function isValidPhone(phone) {
+            return /^254(7|1)\d{8}$/.test(phone);
+        }
+
+        function showStatus(type, message) {
+            statusBox.className = "status-box show " + type;
+            statusBox.textContent = message;
+        }
+
+        function updatePayButton() {
+            const digits = phoneInput.value.replace(/\D/g, "");
+            payBtn.disabled = digits.length < 9 || selectedMpesaAmount === null;
+        }
+
+        phoneInput.addEventListener("input", () => {
+            phoneInput.value = phoneInput.value.replace(/\D/g, "");
+            updatePayButton();
+        });
+
+        payBtn.addEventListener("click", async() => {
+            const phone = normalizePhone(phoneInput.value);
+
+            if (!isValidPhone(phone)) {
+                showStatus("error", "Invalid phone number. Use format 07XX or 01XX followed by 7 digits.");
+                return;
+            }
+
+            payBtn.disabled = true;
+            showStatus("loading", "Sending STK push to " + phone + "... Check your phone and enter your M-Pesa PIN.");
+
+            try {
+                const response = await fetch("/api/payhero/stk-push", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        phone_number: phone,
+                        amount: selectedMpesaAmount
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    showStatus(
+                        "success",
+                        "STK push sent! Enter your M-Pesa PIN on your phone to complete the KES " +
+                        selectedMpesaAmount.toLocaleString() +
+                        " deposit. Your balance updates automatically once payment is confirmed."
+                    );
+                } else {
+                    showStatus("error", data.message || "Failed to initiate payment. Please try again.");
+                    updatePayButton();
+                }
+            } catch (error) {
+                showStatus("error", "Network error. Please check your connection and try again.");
+                updatePayButton();
+            }
+        });
+
+        /* Close open modals with Escape. */
+        document.addEventListener("keydown", event => {
+            if (event.key !== "Escape") return;
+
+            if (ecocashModalOverlay.classList.contains("open")) closeEcocashModal();
+            if (mpesaModalOverlay.classList.contains("open")) closeMpesaModal();
+            if (document.getElementById("usdtNetworkModal").classList.contains("open")) closeUsdtModal();
+            if (document.getElementById("othersModal").classList.contains("open")) closeOthersModal();
+        });
+    </script>
+</body>
+
+</html>

